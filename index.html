@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greek Colors Colors — Official Sigma Gamma Rho Fine Jewelry & Boutique</title>
+  <meta name="description" content="Premier luxury Greek sorority fine jewelry and bespoke boutique celebrating Sigma Gamma Rho Sorority, Inc. Official Royal Blue (#003399) & Gold (#CCA147) collection by Founder & Master Jeweler Roslyn Kiser Miller.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sgrho: {
+              royal: '#003399',
+              deep: '#001B55',
+              navy: '#00123A',
+              gold: '#CCA147',
+              palegold: '#E7CA83',
+              white: '#FCFFFE',
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #00123A;
+      color: #FCFFFE;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #CCA147 0%, #FFF5DA 50%, #CCA147 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-border-gradient {
+      border-image: linear-gradient(to right, #CCA147, #E7CA83, #CCA147) 1;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #CCA147 0%, #E7CA83 100%);
+      color: #001B55;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(204, 161, 71, 0.3);
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #E7CA83 0%, #CCA147 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(204, 161, 71, 0.5);
+    }
+
+    .glass-card {
+      background: rgba(0, 27, 85, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(204, 161, 71, 0.3);
+    }
+
+    /* Modal transition */
+    .modal-backdrop {
+      background: rgba(0, 18, 58, 0.88);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-[#CCA147] selection:text-[#001B55]">
+
+  <!-- TOP BRANDING BANNER -->
+  <div class="bg-[#001B55] border-b border-[#CCA147]/40 py-2.5 px-4 text-center text-xs font-serif tracking-[0.2em] text-[#E7CA83] flex items-center justify-center gap-2">
+    <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#CCA147] animate-pulse"></span>
+    OFFICIAL SIGMA GAMMA RHO SORORITY, INC. BRAND PALETTE • ROYAL BLUE #003399 & GOLD #CCA147
+    <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#CCA147] animate-pulse"></span>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-0 z-40 bg-[#001B55]/95 backdrop-blur-xl border-b border-[#CCA147]/30 px-6 lg:px-16 py-4 transition-all">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- LOGO & SGRHO BADGE -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full border-2 border-[#CCA147] flex items-center justify-center bg-[#003399] text-[#CCA147] font-serif font-bold text-lg shadow-[0_0_15px_rgba(204,161,71,0.4)] group-hover:scale-105 transition-transform">
+          ΣΓΡ
+        </div>
+        <div>
+          <span class="font-serif font-extrabold text-xl tracking-[0.25em] text-[#FCFFFE] block group-hover:text-[#E7CA83] transition-colors">
+            GREEK COLORS COLORS
+          </span>
+          <span class="text-[9px] font-sans uppercase tracking-[0.3em] text-[#CCA147] block">
+            Bespoke Sorority Fine Jewelry
+          </span>
+        </div>
+      </a>
+
+      <!-- NAV LINKS -->
+      <nav class="hidden md:flex items-center space-x-8 text-xs font-serif uppercase tracking-[0.2em] text-[#FCFFFE]/90">
+        <a href="#collections" class="hover:text-[#CCA147] transition">Collections</a>
+        <a href="#heritage" class="hover:text-[#CCA147] transition">Heritage & Sorority</a>
+        <a href="#designer" class="hover:text-[#CCA147] transition">Meet Roslyn Kiser Miller</a>
+      </nav>
+
+      <!-- CART & ACTIONS -->
+      <div class="flex items-center gap-4">
+        <button onclick="toggleBioModal()" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#CCA147]/60 bg-[#003399]/60 text-xs font-serif uppercase tracking-widest text-[#E7CA83] hover:bg-[#003399] hover:border-[#CCA147] transition">
+          <span>👑</span> Designer Bio
+        </button>
+        
+        <button onclick="toggleCartDrawer()" class="relative p-2.5 rounded-full border border-[#CCA147]/40 bg-[#001B55] hover:border-[#CCA147] transition text-[#FCFFFE]">
+          <svg class="w-5 h-5 text-[#CCA147]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#CCA147] text-[#001B55] font-bold text-[10px] flex items-center justify-center">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative py-20 lg:py-28 px-6 lg:px-16 overflow-hidden bg-gradient-to-b from-[#001B55] via-[#003399]/40 to-[#00123A]">
+    <!-- Ambient Background Glows -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#003399]/30 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/3 right-10 w-96 h-96 bg-[#CCA147]/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto text-center relative z-10">
+      
+      <!-- SGRHO Crown Tag -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#001B55] border border-[#CCA147] text-[#E7CA83] text-xs font-serif uppercase tracking-[0.25em] mb-6 shadow-[0_0_20px_rgba(204,161,71,0.25)]">
+        <span>✨</span> Greater Service, Greater Progress • Founded 1922
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-[#FCFFFE] leading-[1.15] mb-6">
+        CELEBRATING SISTERHOOD IN <br/>
+        <span class="gold-gradient-text">ROYAL BLUE & GOLD</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-sm sm:text-base text-[#FCFFFE]/85 font-sans leading-relaxed mb-10">
+        Empowering members of Sigma Gamma Rho Sorority, Inc. with bespoke, limited-edition fine jewelry created by Master Jeweler <strong class="text-[#E7CA83]">Roslyn Kiser Miller</strong>. Designed to act as a confidence coach in a bottle.
+      </p>
+
+      <!-- CTA Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#collections" class="btn-gold px-8 py-4 rounded-sm font-serif text-xs uppercase tracking-[0.25em] w-full sm:w-auto">
+          Explore Royal Collections →
+        </a>
+        <button onclick="toggleBioModal()" class="px-8 py-4 rounded-sm border border-[#CCA147] bg-[#001B55]/80 text-[#FCFFFE] font-serif text-xs uppercase tracking-[0.25em] hover:bg-[#003399] transition w-full sm:w-auto">
+          Meet Designer Roslyn Kiser Miller
+        </button>
+      </div>
+
+      <!-- DESIGNER MINI BANNER -->
+      <div class="mt-14 inline-flex items-center gap-4 p-4 rounded-2xl glass-card text-left max-w-xl mx-auto border-t-2 border-t-[#CCA147]">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Roslyn Kiser Miller" class="w-14 h-14 rounded-full object-cover border-2 border-[#CCA147] flex-shrink-0 shadow-lg">
+        <div>
+          <span class="text-xs font-serif uppercase tracking-widest text-[#E7CA83] font-bold block">Roslyn Kiser Miller</span>
+          <span class="text-[11px] text-[#FCFFFE]/80 block">Founder • Master Jeweler • Creative Director</span>
+          <p class="text-[11px] italic text-[#FCFFFE]/70 mt-1">&ldquo;Fine jewelry should inspire confidence, celebrate individuality, and endure for generations.&rdquo;</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OFFICIAL SPECIFICATIONS PALETTE STRIP -->
+  <section class="py-10 bg-[#001B55] border-y border-[#CCA147]/30 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div class="p-4 rounded bg-[#003399] border border-[#CCA147]/40 shadow-md">
+        <div class="w-6 h-6 rounded-full bg-[#003399] border border-[#FCFFFE] mx-auto mb-2"></div>
+        <span class="text-xs font-serif uppercase tracking-widest text-[#FCFFFE] font-bold block">Royal / Reflex Blue</span>
+        <span class="text-[10px] font-mono text-[#E7CA83]">HEX #003399</span>
+      </div>
+      <div class="p-4 rounded bg-[#00123A] border border-[#CCA147]/40 shadow-md">
+        <div class="w-6 h-6 rounded-full bg-[#CCA147] border border-[#FCFFFE] mx-auto mb-2"></div>
+        <span class="text-xs font-serif uppercase tracking-widest text-[#CCA147] font-bold block">Official Gold</span>
+        <span class="text-[10px] font-mono text-[#FCFFFE]/80">HEX #CCA147</span>
+      </div>
+      <div class="p-4 rounded bg-[#003399] border border-[#CCA147]/40 shadow-md">
+        <div class="w-6 h-6 rounded-full bg-[#E7CA83] border border-[#FCFFFE] mx-auto mb-2"></div>
+        <span class="text-xs font-serif uppercase tracking-widest text-[#E7CA83] font-bold block">Pale Gold Accent</span>
+        <span class="text-[10px] font-mono text-[#FCFFFE]/80">HEX #E7CA83</span>
+      </div>
+      <div class="p-4 rounded bg-[#00123A] border border-[#CCA147]/40 shadow-md">
+        <div class="w-6 h-6 rounded-full bg-[#FCFFFE] border border-[#CCA147] mx-auto mb-2"></div>
+        <span class="text-xs font-serif uppercase tracking-widest text-[#FCFFFE] font-bold block">Bright White</span>
+        <span class="text-[10px] font-mono text-[#E7CA83]">HEX #FCFFFE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS SECTION -->
+  <section id="collections" class="py-20 px-6 lg:px-16 max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#CCA147] block mb-2">Exclusive Sorority Masterpieces</span>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#FCFFFE] tracking-wide uppercase">
+        CURATED ROYAL BLUE & GOLD SUITES
+      </h2>
+      <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#CCA147] to-transparent mx-auto mt-4"></div>
+    </div>
+
+    <!-- PRODUCTS GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Product 1 -->
+      <div class="glass-card rounded-xl overflow-hidden group hover:border-[#CCA147] transition-all duration-300">
+        <div class="relative h-72 bg-[#00123A] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800" alt="Royal Sapphire & Gold Crest Pendant" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          <span class="absolute top-3 left-3 bg-[#003399] border border-[#CCA147] text-[#E7CA83] text-[10px] font-serif uppercase px-2.5 py-1 rounded">
+            ★ Prominent Line
+          </span>
+        </div>
+        <div class="p-6">
+          <span class="text-[10px] font-serif uppercase tracking-widest text-[#E7CA83]">Sigma Gamma Rho Collection</span>
+          <h3 class="font-serif font-bold text-xl text-[#FCFFFE] mt-1 mb-2">Royal Sapphire & Gold Crest Pendant</h3>
+          <p class="text-xs text-[#FCFFFE]/80 leading-relaxed mb-4">Handcrafted 18k yellow gold pendant set with natural royal blue sapphires. Inspired by sisterhood and scholarship.</p>
+          <div class="flex items-center justify-between border-t border-[#CCA147]/25 pt-4">
+            <span class="text-xl font-serif font-bold text-[#CCA147]">$245.00</span>
+            <button onclick="addToCart('Royal Sapphire & Gold Crest Pendant', 245)" class="btn-gold px-4 py-2 rounded text-xs uppercase tracking-wider">
+              Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="glass-card rounded-xl overflow-hidden group hover:border-[#CCA147] transition-all duration-300">
+        <div class="relative h-72 bg-[#00123A] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800" alt="Golden Poodle Heritage Medallion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          <span class="absolute top-3 left-3 bg-[#001B55] border border-[#CCA147] text-[#FCFFFE] text-[10px] font-serif uppercase px-2.5 py-1 rounded">
+            Limited Edition
+          </span>
+        </div>
+        <div class="p-6">
+          <span class="text-[10px] font-serif uppercase tracking-widest text-[#E7CA83]">Sigma Gamma Rho Collection</span>
+          <h3 class="font-serif font-bold text-xl text-[#FCFFFE] mt-1 mb-2">Golden Poodle Heritage Medallion</h3>
+          <p class="text-xs text-[#FCFFFE]/80 leading-relaxed mb-4">Sculpted gold medallion featuring custom engraved filigree and brilliant white diamond accents.</p>
+          <div class="flex items-center justify-between border-t border-[#CCA147]/25 pt-4">
+            <span class="text-xl font-serif font-bold text-[#CCA147]">$310.00</span>
+            <button onclick="addToCart('Golden Poodle Heritage Medallion', 310)" class="btn-gold px-4 py-2 rounded text-xs uppercase tracking-wider">
+              Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="glass-card rounded-xl overflow-hidden group hover:border-[#CCA147] transition-all duration-300">
+        <div class="relative h-72 bg-[#00123A] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800" alt="1922 Centennial Gold Drop Earrings" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          <span class="absolute top-3 left-3 bg-[#003399] border border-[#CCA147] text-[#E7CA83] text-[10px] font-serif uppercase px-2.5 py-1 rounded">
+            Centennial Suite
+          </span>
+        </div>
+        <div class="p-6">
+          <span class="text-[10px] font-serif uppercase tracking-widest text-[#E7CA83]">Sigma Gamma Rho Collection</span>
+          <h3 class="font-serif font-bold text-xl text-[#FCFFFE] mt-1 mb-2">1922 Centennial Gold Drop Earrings</h3>
+          <p class="text-xs text-[#FCFFFE]/80 leading-relaxed mb-4">Elegantly articulated drop earrings in polished gold and vibrant royal blue enamel detailing.</p>
+          <div class="flex items-center justify-between border-t border-[#CCA147]/25 pt-4">
+            <span class="text-xl font-serif font-bold text-[#CCA147]">$195.00</span>
+            <button onclick="addToCart('1922 Centennial Gold Drop Earrings', 195)" class="btn-gold px-4 py-2 rounded text-xs uppercase tracking-wider">
+              Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HERITAGE & DESIGNER SPOTLIGHT -->
+  <section id="designer" class="py-20 px-6 lg:px-16 bg-[#001B55] border-t border-[#CCA147]/30">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      <div class="relative">
+        <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-2 border-[#CCA147] shadow-[0_0_30px_rgba(204,161,71,0.3)]">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000" alt="Roslyn Kiser Miller" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute -bottom-6 -right-6 bg-[#003399] border-2 border-[#CCA147] p-4 rounded-xl text-center shadow-2xl hidden sm:block">
+          <span class="font-serif text-2xl font-bold text-[#CCA147] block">ΣΓΡ</span>
+          <span class="text-[10px] font-serif uppercase text-[#FCFFFE]">Sisterhood • Service</span>
+        </div>
+      </div>
+
+      <div>
+        <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#CCA147] block mb-2">Master Jeweler & Creative Director</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#FCFFFE] mb-6">
+          ROSLYN KISER MILLER
+        </h2>
+
+        <p class="text-sm text-[#FCFFFE]/90 leading-relaxed mb-4">
+          Rosyln Kiser Miller is the visionary Founder, Master Jeweler, and Creative Director of <strong>Greek Colors Colors</strong>, where exceptional craftsmanship meets timeless sophistication.
+        </p>
+
+        <p class="text-sm text-[#FCFFFE]/80 leading-relaxed mb-6">
+          As a proud member of <strong>Sigma Gamma Rho Sorority, Inc.</strong>, Rosyln embraces the principles of Sisterhood, Scholarship, and Service. Each fine jewelry piece in this collection is personally overseen from gemstones to final polish.
+        </p>
+
+        <div class="p-4 rounded-lg bg-[#00123A] border-l-4 border-l-[#CCA147] mb-8">
+          <p class="italic text-xs font-serif text-[#E7CA83] leading-relaxed">
+            &ldquo;Fine jewelry is not measured solely by its brilliance, but by the memories it preserves and the legacy it carries forward.&rdquo;
+          </p>
+        </div>
+
+        <button onclick="toggleBioModal()" class="btn-gold px-8 py-3.5 rounded-sm font-serif text-xs uppercase tracking-widest">
+          Read Full Biography →
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#00123A] border-t border-[#CCA147]/40 py-12 px-6 lg:px-16 text-[#FCFFFE]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+      
+      <div>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="font-serif font-bold text-lg text-[#CCA147]">ΣΓΡ</span>
+          <span class="font-serif font-extrabold text-base tracking-widest text-[#FCFFFE]">GREEK COLORS COLORS</span>
+        </div>
+        <p class="text-xs text-[#FCFFFE]/70 leading-relaxed">
+          Bespoke sorority fine jewelry celebrating Sigma Gamma Rho Sorority, Inc. Official Royal Blue (#003399) and Gold (#CCA147).
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-serif uppercase tracking-widest text-[#CCA147] mb-3 font-bold">Official Palette</h4>
+        <ul class="text-xs text-[#FCFFFE]/80 space-y-1 font-mono">
+          <li>Royal Blue: #003399</li>
+          <li>Gold: #CCA147</li>
+          <li>Bright White: #FCFFFE</li>
+          <li>Deep Shadow: #001B55</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-serif uppercase tracking-widest text-[#CCA147] mb-3 font-bold">Boutique Services</h4>
+        <ul class="text-xs text-[#FCFFFE]/80 space-y-1 font-sans">
+          <li>Custom Sorority Engravings</li>
+          <li>Insured Worldwide Delivery</li>
+          <li>Certificate of Authenticity</li>
+          <li>Concierge Orders</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-serif uppercase tracking-widest text-[#CCA147] mb-3 font-bold">Founder & Jeweler</h4>
+        <p class="text-xs text-[#FCFFFE]/80 leading-relaxed">
+          Roslyn Kiser Miller<br/>
+          Master Jeweler & Creative Director<br/>
+          Sigma Gamma Rho Sorority, Inc.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 border-t border-[#CCA147]/20 text-center text-[11px] text-[#FCFFFE]/60 font-serif uppercase tracking-widest">
+      &copy; 2026 GREEK COLORS COLORS. ALL RIGHTS RESERVED. CELEBRATING SIGMA GAMMA RHO SORORITY, INC.
+    </div>
+  </footer>
+
+  <!-- DESIGNER BIO MODAL -->
+  <div id="bio-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-backdrop">
+    <div class="relative w-full max-w-xl bg-[#001B55] border-2 border-[#CCA147] rounded-2xl p-6 sm:p-8 shadow-2xl text-[#FCFFFE] max-h-[90vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button onclick="toggleBioModal()" class="absolute top-4 right-4 text-[#FCFFFE]/70 hover:text-[#CCA147] text-xl font-bold">✕</button>
+
+      <div class="flex items-center gap-4 border-b border-[#CCA147]/30 pb-4 mb-6">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Roslyn Kiser Miller" class="w-16 h-16 rounded-full object-cover border-2 border-[#CCA147]">
+        <div>
+          <h3 class="font-serif font-bold text-xl text-[#FCFFFE]">Roslyn Kiser Miller</h3>
+          <span class="text-xs font-serif uppercase text-[#E7CA83] block">Founder • Master Jeweler • Creative Director</span>
+          <span class="inline-block mt-1 px-2 py-0.5 rounded bg-[#003399] border border-[#CCA147] text-[10px] font-serif text-[#E7CA83]">Sigma Gamma Rho Sorority, Inc.</span>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-[#FCFFFE]/90 leading-relaxed font-sans">
+        <p>Rosyln Kiser Miller is the visionary Founder, Master Jeweler, and Creative Director of Greek Colors Colors, where exceptional craftsmanship meets timeless sophistication. Guided by an unwavering commitment to quality and artistic excellence, she creates fine jewelry celebrating life's most treasured moments.</p>
+
+        <p>With a passion for elegant design and meticulous attention to detail, Rosyln personally oversees every collection. From concept and gemstone selection to the final finishing touches, each piece reflects her belief that fine jewelry should inspire confidence and celebrate individuality.</p>
+
+        <p>As a proud member of Sigma Gamma Rho Sorority, Inc., Rosyln embraces the principles of Sisterhood, Scholarship, and Service—values that influence both her leadership and her approach to design.</p>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-[#CCA147]/30 text-right">
+        <button onclick="toggleBioModal()" class="btn-gold px-6 py-2.5 rounded text-xs uppercase tracking-widest">
+          Close Biography
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div id="cart-drawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-[#001B55] border-l-2 border-l-[#CCA147] p-6 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between border-b border-[#CCA147]/30 pb-4 mb-6">
+        <h3 class="font-serif font-bold text-lg text-[#FCFFFE] uppercase tracking-wider">Your Boutique Bag</h3>
+        <button onclick="toggleCartDrawer()" class="text-[#FCFFFE]/70 hover:text-[#CCA147] text-xl font-bold">✕</button>
+      </div>
+
+      <div id="cart-items" class="space-y-4 text-xs text-[#FCFFFE]/80">
+        <p id="empty-cart-msg" class="text-center py-10 italic">Your bag is currently empty.</p>
+      </div>
+    </div>
+
+    <div class="border-t border-[#CCA147]/30 pt-6">
+      <div class="flex items-center justify-between mb-4 font-serif font-bold text-base">
+        <span>Total:</span>
+        <span id="cart-total-price" class="text-[#CCA147]">$0.00</span>
+      </div>
+      <button onclick="checkout()" class="btn-gold w-full py-3.5 rounded text-xs uppercase tracking-widest">
+        Proceed to Sorority Concierge Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    let cart = [];
+
+    function toggleBioModal() {
+      const modal = document.getElementById('bio-modal');
+      modal.classList.toggle('hidden');
+      modal.classList.toggle('flex');
+    }
+
+    function toggleCartDrawer() {
+      const drawer = document.getElementById('cart-drawer');
+      drawer.classList.toggle('translate-x-full');
+    }
+
+    function addToCart(title, price) {
+      cart.push({ title, price });
+      updateCartUI();
+      toggleCartDrawer();
+    }
+
+    function updateCartUI() {
+      const countEl = document.getElementById('cart-count');
+      const itemsEl = document.getElementById('cart-items');
+      const totalEl = document.getElementById('cart-total-price');
+
+      countEl.innerText = cart.length;
+
+      if (cart.length === 0) {
+        itemsEl.innerHTML = '<p class="text-center py-10 italic">Your bag is currently empty.</p>';
+        totalEl.innerText = '$0.00';
+        return;
+      }
+
+      let total = 0;
+      let html = '';
+      cart.forEach((item, idx) => {
+        total += item.price;
+        html += `
+          <div class="flex items-center justify-between p-3 rounded bg-[#00123A] border border-[#CCA147]/20">
+            <div>
+              <span class="font-serif font-bold text-xs text-[#FCFFFE] block">${item.title}</span>
+              <span class="text-[10px] text-[#E7CA83]">$${item.price.toFixed(2)}</span>
+            </div>
+            <button onclick="removeFromCart(${idx})" class="text-red-400 hover:text-red-300 text-xs font-bold">Remove</button>
+          </div>
+        `;
+      });
+
+      itemsEl.innerHTML = html;
+      totalEl.innerText = '$' + total.toFixed(2);
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Your bag is empty!");
+        return;
+      }
+      alert("💙 Thank you for choosing Greek Colors Colors! Our Sorority Concierge will confirm your order via email.");
+      cart = [];
+      updateCartUI();
+      toggleCartDrawer();
+    }
+  </script>
+
+</body>
+</html>
