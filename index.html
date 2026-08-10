@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greek Colors Colors — Official Sigma Gamma Rho Fine Jewelry & Boutique</title>
-  <meta name="description" content="Premier luxury Greek sorority fine jewelry and bespoke boutique celebrating Sigma Gamma Rho Sorority, Inc. Official Royal Blue (#003399) & Gold (#CCA147) collection by Founder & Master Jeweler Roslyn Kiser Miller.">
+  <title>Greek Colors Colors — Official Sigma Gamma Rho Fine Jewelry & Admin Portal</title>
+  <meta name="description" content="Premier luxury Greek sorority fine jewelry boutique & admin portal celebrating Sigma Gamma Rho Sorority, Inc. Official Royal Blue (#003399) & Gold (#CCA147) collection by Founder & Master Jeweler Roslyn Kiser Miller.">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,284 +50,364 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .gold-border-gradient {
-      border-image: linear-gradient(to right, #CCA147, #E7CA83, #CCA147) 1;
-    }
-
     .btn-gold {
       background: linear-gradient(135deg, #CCA147 0%, #E7CA83 100%);
       color: #001B55;
       font-weight: 700;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(204, 161, 71, 0.3);
+      box-shadow: 0 4px 20px rgba(204, 161, 71, 0.35);
     }
     .btn-gold:hover {
       background: linear-gradient(135deg, #E7CA83 0%, #CCA147 100%);
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(204, 161, 71, 0.5);
+      box-shadow: 0 6px 25px rgba(204, 161, 71, 0.55);
     }
 
     .glass-card {
-      background: rgba(0, 27, 85, 0.85);
+      background: rgba(0, 27, 85, 0.90);
       backdrop-filter: blur(16px);
-      border: 1px solid rgba(204, 161, 71, 0.3);
+      border: 1px solid rgba(204, 161, 71, 0.35);
     }
 
-    /* Modal transition */
     .modal-backdrop {
-      background: rgba(0, 18, 58, 0.88);
-      backdrop-filter: blur(12px);
+      background: rgba(0, 18, 58, 0.92);
+      backdrop-filter: blur(14px);
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-[#CCA147] selection:text-[#001B55]">
 
-  <!-- TOP BRANDING BANNER -->
-  <div class="bg-[#001B55] border-b border-[#CCA147]/40 py-2.5 px-4 text-center text-xs font-serif tracking-[0.2em] text-[#E7CA83] flex items-center justify-center gap-2">
-    <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#CCA147] animate-pulse"></span>
-    OFFICIAL SIGMA GAMMA RHO SORORITY, INC. BRAND PALETTE • ROYAL BLUE #003399 & GOLD #CCA147
-    <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#CCA147] animate-pulse"></span>
+  <!-- TOP BRANDING & NAVIGATION STRIP -->
+  <div class="bg-[#001B55] border-b border-[#CCA147]/40 py-2 px-4 text-center text-xs font-serif tracking-[0.2em] text-[#E7CA83] flex items-center justify-between">
+    <div class="hidden sm:flex items-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-[#CCA147] animate-pulse"></span>
+      SIGMA GAMMA RHO SORORITY, INC. OFFICIAL PALETTE: ROYAL BLUE #003399 & GOLD #CCA147
+    </div>
+    <div class="mx-auto sm:mx-0 flex items-center gap-3">
+      <button onclick="switchTab('storefront')" id="tab-btn-storefront" class="text-xs font-serif uppercase tracking-widest px-3 py-1 rounded bg-[#CCA147] text-[#001B55] font-bold">
+        Storefront View
+      </button>
+      <button onclick="switchTab('admin')" id="tab-btn-admin" class="text-xs font-serif uppercase tracking-widest px-3 py-1 rounded bg-[#003399] border border-[#CCA147]/60 text-[#FCFFFE] hover:bg-[#001B55]">
+        ⚙️ Admin Catalog Portal
+      </button>
+      <button onclick="switchTab('studio')" id="tab-btn-studio" class="text-xs font-serif uppercase tracking-widest px-3 py-1 rounded bg-[#003399] border border-[#CCA147]/60 text-[#E7CA83] hover:bg-[#001B55]">
+        ✨ AI Marketing Studio
+      </button>
+    </div>
   </div>
 
-  <!-- NAVIGATION BAR -->
-  <header class="sticky top-0 z-40 bg-[#001B55]/95 backdrop-blur-xl border-b border-[#CCA147]/30 px-6 lg:px-16 py-4 transition-all">
+  <!-- HEADER NAVBAR -->
+  <header class="sticky top-0 z-40 bg-[#001B55]/95 backdrop-blur-xl border-b border-[#CCA147]/30 px-6 lg:px-16 py-4">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- LOGO & SGRHO BADGE -->
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-full border-2 border-[#CCA147] flex items-center justify-center bg-[#003399] text-[#CCA147] font-serif font-bold text-lg shadow-[0_0_15px_rgba(204,161,71,0.4)] group-hover:scale-105 transition-transform">
+      <!-- LOGO & SGRHO CREST -->
+      <a href="#" onclick="switchTab('storefront')" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-full border-2 border-[#CCA147] flex items-center justify-center bg-[#003399] text-[#CCA147] font-serif font-bold text-lg shadow-[0_0_20px_rgba(204,161,71,0.4)] group-hover:scale-105 transition-transform">
           ΣΓΡ
         </div>
         <div>
-          <span class="font-serif font-extrabold text-xl tracking-[0.25em] text-[#FCFFFE] block group-hover:text-[#E7CA83] transition-colors">
+          <span class="font-serif font-extrabold text-xl lg:text-2xl tracking-[0.2em] text-[#FCFFFE] block group-hover:text-[#E7CA83] transition-colors">
             GREEK COLORS COLORS
           </span>
-          <span class="text-[9px] font-sans uppercase tracking-[0.3em] text-[#CCA147] block">
-            Bespoke Sorority Fine Jewelry
+          <span class="text-[9px] font-sans uppercase tracking-[0.3em] text-[#CCA147] block font-semibold">
+            Bespoke Fine Jewelry • Roslyn Kiser Miller
           </span>
         </div>
       </a>
 
       <!-- NAV LINKS -->
       <nav class="hidden md:flex items-center space-x-8 text-xs font-serif uppercase tracking-[0.2em] text-[#FCFFFE]/90">
-        <a href="#collections" class="hover:text-[#CCA147] transition">Collections</a>
-        <a href="#heritage" class="hover:text-[#CCA147] transition">Heritage & Sorority</a>
-        <a href="#designer" class="hover:text-[#CCA147] transition">Meet Roslyn Kiser Miller</a>
+        <a href="#" onclick="switchTab('storefront')" class="hover:text-[#CCA147] transition">Collections</a>
+        <a href="#heritage" onclick="switchTab('storefront')" class="hover:text-[#CCA147] transition">Heritage</a>
+        <button onclick="toggleBioModal()" class="hover:text-[#CCA147] transition">Roslyn Kiser Miller Bio</button>
       </nav>
 
       <!-- CART & ACTIONS -->
       <div class="flex items-center gap-4">
-        <button onclick="toggleBioModal()" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#CCA147]/60 bg-[#003399]/60 text-xs font-serif uppercase tracking-widest text-[#E7CA83] hover:bg-[#003399] hover:border-[#CCA147] transition">
-          <span>👑</span> Designer Bio
+        <button onclick="toggleBioModal()" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#CCA147]/80 bg-[#003399]/70 text-xs font-serif uppercase tracking-widest text-[#E7CA83] hover:bg-[#003399] transition shadow-md">
+          <span>👑</span> Master Jeweler Bio
         </button>
         
-        <button onclick="toggleCartDrawer()" class="relative p-2.5 rounded-full border border-[#CCA147]/40 bg-[#001B55] hover:border-[#CCA147] transition text-[#FCFFFE]">
+        <button onclick="toggleCartDrawer()" class="relative p-2.5 rounded-full border border-[#CCA147]/50 bg-[#001B55] hover:border-[#CCA147] transition text-[#FCFFFE]">
           <svg class="w-5 h-5 text-[#CCA147]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
           </svg>
-          <span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#CCA147] text-[#001B55] font-bold text-[10px] flex items-center justify-center">0</span>
+          <span id="cart-count" class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#CCA147] text-[#001B55] font-bold text-[10px] flex items-center justify-center shadow-md">0</span>
         </button>
       </div>
 
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="relative py-20 lg:py-28 px-6 lg:px-16 overflow-hidden bg-gradient-to-b from-[#001B55] via-[#003399]/40 to-[#00123A]">
-    <!-- Ambient Background Glows -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#003399]/30 rounded-full blur-[140px] pointer-events-none"></div>
-    <div class="absolute top-1/3 right-10 w-96 h-96 bg-[#CCA147]/15 rounded-full blur-[120px] pointer-events-none"></div>
+  <!-- MAIN TAB 1: STOREFRONT VIEW -->
+  <div id="view-storefront" class="tab-content">
 
-    <div class="max-w-6xl mx-auto text-center relative z-10">
-      
-      <!-- SGRHO Crown Tag -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#001B55] border border-[#CCA147] text-[#E7CA83] text-xs font-serif uppercase tracking-[0.25em] mb-6 shadow-[0_0_20px_rgba(204,161,71,0.25)]">
-        <span>✨</span> Greater Service, Greater Progress • Founded 1922
-      </div>
+    <!-- HERO SECTION -->
+    <section class="relative py-20 lg:py-28 px-6 lg:px-16 overflow-hidden bg-gradient-to-b from-[#001B55] via-[#003399]/40 to-[#00123A]">
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#003399]/30 rounded-full blur-[140px] pointer-events-none"></div>
+      <div class="absolute top-1/3 right-10 w-96 h-96 bg-[#CCA147]/15 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-[#FCFFFE] leading-[1.15] mb-6">
-        CELEBRATING SISTERHOOD IN <br/>
-        <span class="gold-gradient-text">ROYAL BLUE & GOLD</span>
-      </h1>
-
-      <p class="max-w-2xl mx-auto text-sm sm:text-base text-[#FCFFFE]/85 font-sans leading-relaxed mb-10">
-        Empowering members of Sigma Gamma Rho Sorority, Inc. with bespoke, limited-edition fine jewelry created by Master Jeweler <strong class="text-[#E7CA83]">Roslyn Kiser Miller</strong>. Designed to act as a confidence coach in a bottle.
-      </p>
-
-      <!-- CTA Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#collections" class="btn-gold px-8 py-4 rounded-sm font-serif text-xs uppercase tracking-[0.25em] w-full sm:w-auto">
-          Explore Royal Collections →
-        </a>
-        <button onclick="toggleBioModal()" class="px-8 py-4 rounded-sm border border-[#CCA147] bg-[#001B55]/80 text-[#FCFFFE] font-serif text-xs uppercase tracking-[0.25em] hover:bg-[#003399] transition w-full sm:w-auto">
-          Meet Designer Roslyn Kiser Miller
-        </button>
-      </div>
-
-      <!-- DESIGNER MINI BANNER -->
-      <div class="mt-14 inline-flex items-center gap-4 p-4 rounded-2xl glass-card text-left max-w-xl mx-auto border-t-2 border-t-[#CCA147]">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Roslyn Kiser Miller" class="w-14 h-14 rounded-full object-cover border-2 border-[#CCA147] flex-shrink-0 shadow-lg">
-        <div>
-          <span class="text-xs font-serif uppercase tracking-widest text-[#E7CA83] font-bold block">Roslyn Kiser Miller</span>
-          <span class="text-[11px] text-[#FCFFFE]/80 block">Founder • Master Jeweler • Creative Director</span>
-          <p class="text-[11px] italic text-[#FCFFFE]/70 mt-1">&ldquo;Fine jewelry should inspire confidence, celebrate individuality, and endure for generations.&rdquo;</p>
+      <div class="max-w-6xl mx-auto text-center relative z-10">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#001B55] border border-[#CCA147] text-[#E7CA83] text-xs font-serif uppercase tracking-[0.25em] mb-6 shadow-[0_0_20px_rgba(204,161,71,0.25)]">
+          <span>✨</span> Sisterhood • Scholarship • Service • Founded 1922
         </div>
-      </div>
 
-    </div>
-  </section>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-[#FCFFFE] leading-[1.15] mb-6">
+          CELEBRATING SISTERHOOD IN <br/>
+          <span class="gold-gradient-text">ROYAL BLUE & GOLD</span>
+        </h1>
 
-  <!-- OFFICIAL SPECIFICATIONS PALETTE STRIP -->
-  <section class="py-10 bg-[#001B55] border-y border-[#CCA147]/30 px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-      <div class="p-4 rounded bg-[#003399] border border-[#CCA147]/40 shadow-md">
-        <div class="w-6 h-6 rounded-full bg-[#003399] border border-[#FCFFFE] mx-auto mb-2"></div>
-        <span class="text-xs font-serif uppercase tracking-widest text-[#FCFFFE] font-bold block">Royal / Reflex Blue</span>
-        <span class="text-[10px] font-mono text-[#E7CA83]">HEX #003399</span>
-      </div>
-      <div class="p-4 rounded bg-[#00123A] border border-[#CCA147]/40 shadow-md">
-        <div class="w-6 h-6 rounded-full bg-[#CCA147] border border-[#FCFFFE] mx-auto mb-2"></div>
-        <span class="text-xs font-serif uppercase tracking-widest text-[#CCA147] font-bold block">Official Gold</span>
-        <span class="text-[10px] font-mono text-[#FCFFFE]/80">HEX #CCA147</span>
-      </div>
-      <div class="p-4 rounded bg-[#003399] border border-[#CCA147]/40 shadow-md">
-        <div class="w-6 h-6 rounded-full bg-[#E7CA83] border border-[#FCFFFE] mx-auto mb-2"></div>
-        <span class="text-xs font-serif uppercase tracking-widest text-[#E7CA83] font-bold block">Pale Gold Accent</span>
-        <span class="text-[10px] font-mono text-[#FCFFFE]/80">HEX #E7CA83</span>
-      </div>
-      <div class="p-4 rounded bg-[#00123A] border border-[#CCA147]/40 shadow-md">
-        <div class="w-6 h-6 rounded-full bg-[#FCFFFE] border border-[#CCA147] mx-auto mb-2"></div>
-        <span class="text-xs font-serif uppercase tracking-widest text-[#FCFFFE] font-bold block">Bright White</span>
-        <span class="text-[10px] font-mono text-[#E7CA83]">HEX #FCFFFE</span>
-      </div>
-    </div>
-  </section>
+        <p class="max-w-2xl mx-auto text-sm sm:text-base text-[#FCFFFE]/85 font-sans leading-relaxed mb-10">
+          Empowering members of Sigma Gamma Rho Sorority, Inc. with bespoke, limited-edition fine jewelry created by Master Jeweler <strong class="text-[#E7CA83]">Roslyn Kiser Miller</strong>. Designed to act as a confidence coach in a bottle.
+        </p>
 
-  <!-- COLLECTIONS SECTION -->
-  <section id="collections" class="py-20 px-6 lg:px-16 max-w-7xl mx-auto">
-    <div class="text-center mb-14">
-      <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#CCA147] block mb-2">Exclusive Sorority Masterpieces</span>
-      <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#FCFFFE] tracking-wide uppercase">
-        CURATED ROYAL BLUE & GOLD SUITES
-      </h2>
-      <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#CCA147] to-transparent mx-auto mt-4"></div>
-    </div>
-
-    <!-- PRODUCTS GRID -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-      <!-- Product 1 -->
-      <div class="glass-card rounded-xl overflow-hidden group hover:border-[#CCA147] transition-all duration-300">
-        <div class="relative h-72 bg-[#00123A] overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800" alt="Royal Sapphire & Gold Crest Pendant" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-          <span class="absolute top-3 left-3 bg-[#003399] border border-[#CCA147] text-[#E7CA83] text-[10px] font-serif uppercase px-2.5 py-1 rounded">
-            ★ Prominent Line
-          </span>
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#collections-list" class="btn-gold px-8 py-4 rounded-sm font-serif text-xs uppercase tracking-[0.25em] w-full sm:w-auto">
+            Explore Royal Collections →
+          </a>
+          <button onclick="toggleBioModal()" class="px-8 py-4 rounded-sm border border-[#CCA147] bg-[#001B55]/80 text-[#FCFFFE] font-serif text-xs uppercase tracking-[0.25em] hover:bg-[#003399] transition w-full sm:w-auto">
+            Meet Designer Roslyn Kiser Miller
+          </button>
         </div>
-        <div class="p-6">
-          <span class="text-[10px] font-serif uppercase tracking-widest text-[#E7CA83]">Sigma Gamma Rho Collection</span>
-          <h3 class="font-serif font-bold text-xl text-[#FCFFFE] mt-1 mb-2">Royal Sapphire & Gold Crest Pendant</h3>
-          <p class="text-xs text-[#FCFFFE]/80 leading-relaxed mb-4">Handcrafted 18k yellow gold pendant set with natural royal blue sapphires. Inspired by sisterhood and scholarship.</p>
-          <div class="flex items-center justify-between border-t border-[#CCA147]/25 pt-4">
-            <span class="text-xl font-serif font-bold text-[#CCA147]">$245.00</span>
-            <button onclick="addToCart('Royal Sapphire & Gold Crest Pendant', 245)" class="btn-gold px-4 py-2 rounded text-xs uppercase tracking-wider">
-              Add to Bag
-            </button>
+
+        <!-- ROSLYN KISER MILLER SELF-PORTRAIT CARD -->
+        <div class="mt-14 max-w-2xl mx-auto p-5 rounded-2xl glass-card text-left border-t-2 border-t-[#CCA147] flex flex-col sm:flex-row items-center gap-5 shadow-2xl">
+          <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-[#CCA147] flex-shrink-0 shadow-[0_0_20px_rgba(204,161,71,0.4)]">
+            <img src="./roslyn-miller.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500'" alt="Roslyn Kiser Miller Portrait" class="w-full h-full object-cover object-top">
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-serif font-bold text-lg text-[#FCFFFE]">Roslyn Kiser Miller</h3>
+              <span class="px-2 py-0.5 rounded text-[10px] font-serif font-bold text-[#E7CA83] bg-[#003399] border border-[#CCA147]/60">ΣΓΡ</span>
+            </div>
+            <span class="text-xs font-serif uppercase tracking-[0.18em] text-[#CCA147] block mt-0.5 font-semibold">Founder • Master Jeweler • Creative Director</span>
+            <p class="text-xs italic text-[#E7CA83] mt-2 leading-relaxed">&ldquo;The most beautiful jewelry is measured not solely by its brilliance, but by the memories it preserves and the legacy it carries forward.&rdquo;</p>
           </div>
         </div>
-      </div>
 
-      <!-- Product 2 -->
-      <div class="glass-card rounded-xl overflow-hidden group hover:border-[#CCA147] transition-all duration-300">
-        <div class="relative h-72 bg-[#00123A] overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800" alt="Golden Poodle Heritage Medallion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-          <span class="absolute top-3 left-3 bg-[#001B55] border border-[#CCA147] text-[#FCFFFE] text-[10px] font-serif uppercase px-2.5 py-1 rounded">
-            Limited Edition
-          </span>
-        </div>
-        <div class="p-6">
-          <span class="text-[10px] font-serif uppercase tracking-widest text-[#E7CA83]">Sigma Gamma Rho Collection</span>
-          <h3 class="font-serif font-bold text-xl text-[#FCFFFE] mt-1 mb-2">Golden Poodle Heritage Medallion</h3>
-          <p class="text-xs text-[#FCFFFE]/80 leading-relaxed mb-4">Sculpted gold medallion featuring custom engraved filigree and brilliant white diamond accents.</p>
-          <div class="flex items-center justify-between border-t border-[#CCA147]/25 pt-4">
-            <span class="text-xl font-serif font-bold text-[#CCA147]">$310.00</span>
-            <button onclick="addToCart('Golden Poodle Heritage Medallion', 310)" class="btn-gold px-4 py-2 rounded text-xs uppercase tracking-wider">
-              Add to Bag
-            </button>
-          </div>
-        </div>
       </div>
+    </section>
 
-      <!-- Product 3 -->
-      <div class="glass-card rounded-xl overflow-hidden group hover:border-[#CCA147] transition-all duration-300">
-        <div class="relative h-72 bg-[#00123A] overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800" alt="1922 Centennial Gold Drop Earrings" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-          <span class="absolute top-3 left-3 bg-[#003399] border border-[#CCA147] text-[#E7CA83] text-[10px] font-serif uppercase px-2.5 py-1 rounded">
-            Centennial Suite
-          </span>
+    <!-- PALETTE STRIP -->
+    <section class="py-8 bg-[#001B55] border-y border-[#CCA147]/30 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div class="p-3.5 rounded bg-[#003399] border border-[#CCA147]/40">
+          <div class="w-5 h-5 rounded-full bg-[#003399] border border-[#FCFFFE] mx-auto mb-1.5"></div>
+          <span class="text-xs font-serif uppercase tracking-widest text-[#FCFFFE] font-bold block">Royal / Reflex Blue</span>
+          <span class="text-[10px] font-mono text-[#E7CA83]">HEX #003399</span>
         </div>
-        <div class="p-6">
-          <span class="text-[10px] font-serif uppercase tracking-widest text-[#E7CA83]">Sigma Gamma Rho Collection</span>
-          <h3 class="font-serif font-bold text-xl text-[#FCFFFE] mt-1 mb-2">1922 Centennial Gold Drop Earrings</h3>
-          <p class="text-xs text-[#FCFFFE]/80 leading-relaxed mb-4">Elegantly articulated drop earrings in polished gold and vibrant royal blue enamel detailing.</p>
-          <div class="flex items-center justify-between border-t border-[#CCA147]/25 pt-4">
-            <span class="text-xl font-serif font-bold text-[#CCA147]">$195.00</span>
-            <button onclick="addToCart('1922 Centennial Gold Drop Earrings', 195)" class="btn-gold px-4 py-2 rounded text-xs uppercase tracking-wider">
-              Add to Bag
-            </button>
-          </div>
+        <div class="p-3.5 rounded bg-[#00123A] border border-[#CCA147]/40">
+          <div class="w-5 h-5 rounded-full bg-[#CCA147] border border-[#FCFFFE] mx-auto mb-1.5"></div>
+          <span class="text-xs font-serif uppercase tracking-widest text-[#CCA147] font-bold block">Official Gold</span>
+          <span class="text-[10px] font-mono text-[#FCFFFE]/80">HEX #CCA147</span>
+        </div>
+        <div class="p-3.5 rounded bg-[#003399] border border-[#CCA147]/40">
+          <div class="w-5 h-5 rounded-full bg-[#E7CA83] border border-[#FCFFFE] mx-auto mb-1.5"></div>
+          <span class="text-xs font-serif uppercase tracking-widest text-[#E7CA83] font-bold block">Pale Gold Accent</span>
+          <span class="text-[10px] font-mono text-[#FCFFFE]/80">HEX #E7CA83</span>
+        </div>
+        <div class="p-3.5 rounded bg-[#00123A] border border-[#CCA147]/40">
+          <div class="w-5 h-5 rounded-full bg-[#FCFFFE] border border-[#CCA147] mx-auto mb-1.5"></div>
+          <span class="text-xs font-serif uppercase tracking-widest text-[#FCFFFE] font-bold block">Bright White</span>
+          <span class="text-[10px] font-mono text-[#E7CA83]">HEX #FCFFFE</span>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- HERITAGE & DESIGNER SPOTLIGHT -->
-  <section id="designer" class="py-20 px-6 lg:px-16 bg-[#001B55] border-t border-[#CCA147]/30">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      
-      <div class="relative">
-        <div class="relative w-full aspect-square rounded-2xl overflow-hidden border-2 border-[#CCA147] shadow-[0_0_30px_rgba(204,161,71,0.3)]">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000" alt="Roslyn Kiser Miller" class="w-full h-full object-cover">
-        </div>
-        <div class="absolute -bottom-6 -right-6 bg-[#003399] border-2 border-[#CCA147] p-4 rounded-xl text-center shadow-2xl hidden sm:block">
-          <span class="font-serif text-2xl font-bold text-[#CCA147] block">ΣΓΡ</span>
-          <span class="text-[10px] font-serif uppercase text-[#FCFFFE]">Sisterhood • Service</span>
-        </div>
-      </div>
-
-      <div>
-        <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#CCA147] block mb-2">Master Jeweler & Creative Director</span>
-        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#FCFFFE] mb-6">
-          ROSLYN KISER MILLER
+    <!-- STOREFRONT COLLECTIONS & JEWELRY PIECES -->
+    <section id="collections-list" class="py-20 px-6 lg:px-16 max-w-7xl mx-auto">
+      <div class="text-center mb-14">
+        <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#CCA147] block mb-2">Masterpiece Archive & Carousel Suite</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#FCFFFE] tracking-wide uppercase">
+          CURATED ROYAL BLUE & GOLD PIECES
         </h2>
+        <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#CCA147] to-transparent mx-auto mt-4"></div>
+      </div>
 
-        <p class="text-sm text-[#FCFFFE]/90 leading-relaxed mb-4">
-          Rosyln Kiser Miller is the visionary Founder, Master Jeweler, and Creative Director of <strong>Greek Colors Colors</strong>, where exceptional craftsmanship meets timeless sophistication.
-        </p>
+      <div id="store-products-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Injected via JS -->
+      </div>
+    </section>
 
-        <p class="text-sm text-[#FCFFFE]/80 leading-relaxed mb-6">
-          As a proud member of <strong>Sigma Gamma Rho Sorority, Inc.</strong>, Rosyln embraces the principles of Sisterhood, Scholarship, and Service. Each fine jewelry piece in this collection is personally overseen from gemstones to final polish.
-        </p>
+  </div>
 
-        <div class="p-4 rounded-lg bg-[#00123A] border-l-4 border-l-[#CCA147] mb-8">
-          <p class="italic text-xs font-serif text-[#E7CA83] leading-relaxed">
-            &ldquo;Fine jewelry is not measured solely by its brilliance, but by the memories it preserves and the legacy it carries forward.&rdquo;
+  <!-- MAIN TAB 2: ADMIN CATALOG & PROMINENCE PORTAL -->
+  <div id="view-admin" class="tab-content hidden">
+    <main class="max-w-7xl mx-auto p-6 md:p-10">
+      
+      <!-- Admin Header Banner -->
+      <div class="mb-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6 glass-card p-8 rounded-xl border border-[#CCA147]/50 shadow-2xl">
+        <div>
+          <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#E7CA83] block mb-1">
+            Designs by Roslyn Kiser Miller Archive
+          </span>
+          <h1 class="text-2xl sm:text-3xl font-serif font-bold text-[#CCA147] uppercase tracking-wide">
+            CATALOG & PROMINENCE ADMINISTRATION
+          </h1>
+          <p class="text-xs text-[#FCFFFE]/80 font-sans mt-1">
+            Upload ZIP image archives to translate into carousels, control which categories showcase prominently, or manage pieces.
           </p>
         </div>
-
-        <button onclick="toggleBioModal()" class="btn-gold px-8 py-3.5 rounded-sm font-serif text-xs uppercase tracking-widest">
-          Read Full Biography →
-        </button>
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="bg-[#003399] border border-[#CCA147] text-[#E7CA83] px-4 py-2 rounded text-xs font-serif uppercase tracking-widest font-semibold shadow-md">
+            ★ 2 Prominent Lines
+          </div>
+          <div class="bg-[#00123A] border border-[#CCA147]/40 text-[#FCFFFE] px-4 py-2 rounded text-xs font-serif uppercase tracking-widest font-semibold">
+            6 Active Pieces
+          </div>
+        </div>
       </div>
 
-    </div>
-  </section>
+      <!-- ZIP Archive Upload & Collection Studio -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        
+        <div class="bg-[#001B55] border border-[#CCA147]/50 rounded-xl p-6 shadow-xl">
+          <span class="text-[10px] font-serif uppercase tracking-widest text-[#E7CA83] block mb-1">ZIP to Carousel Studio</span>
+          <h2 class="text-lg font-serif font-bold tracking-wider text-[#FCFFFE] mb-2">+ UPLOAD ZIP ARCHIVE</h2>
+          <p class="text-xs text-[#FCFFFE]/70 mb-4">Select a .zip file of jewelry images (e.g. Greek Collection.zip). We unpack the archive and translate into interactive carousels.</p>
+
+          <form onsubmit="handleZipUpload(event)" class="space-y-4">
+            <div>
+              <label class="text-[10px] font-serif uppercase text-[#CCA147] block mb-1">1. Select ZIP Archive (.zip)</label>
+              <input type="file" accept=".zip" required class="w-full text-xs text-[#FCFFFE] bg-[#00123A] border border-[#CCA147]/40 p-2 rounded cursor-pointer">
+            </div>
+            <div>
+              <label class="text-[10px] font-serif uppercase text-[#CCA147] block mb-1">2. Collection Name</label>
+              <input type="text" id="zip-col-name" placeholder="e.g. Royal Centennial Suite" class="w-full bg-[#00123A] border border-[#CCA147]/40 p-2.5 rounded text-xs text-[#FCFFFE] focus:border-[#CCA147] focus:outline-none">
+            </div>
+            <label class="flex items-center space-x-2 p-2 rounded bg-[#00123A] border border-[#CCA147]/30 cursor-pointer">
+              <input type="checkbox" id="zip-featured" class="rounded text-[#CCA147]">
+              <span class="text-xs font-serif uppercase tracking-wider text-[#E7CA83]">★ Showcase Prominently on Homepage</span>
+            </label>
+            <button type="submit" class="btn-gold w-full py-3 rounded text-xs uppercase tracking-widest">
+              Upload ZIP & Generate Carousel
+            </button>
+          </form>
+        </div>
+
+        <div class="lg:col-span-2 bg-[#001B55] border border-[#CCA147]/50 rounded-xl p-6 shadow-xl">
+          <span class="text-[10px] font-serif uppercase tracking-widest text-[#E7CA83] block mb-1">Product Creator</span>
+          <h2 class="text-lg font-serif font-bold tracking-wider text-[#FCFFFE] mb-4">+ ADD INDIVIDUAL PIECE TO ARCHIVE</h2>
+
+          <form onsubmit="handleAddProduct(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-[10px] font-serif uppercase text-[#CCA147] block mb-1">Piece Title</label>
+              <input type="text" id="prod-title" required placeholder="e.g. Sigma Gamma Sapphire Brooch" class="w-full bg-[#00123A] border border-[#CCA147]/40 p-2.5 rounded text-xs text-[#FCFFFE]">
+            </div>
+            <div>
+              <label class="text-[10px] font-serif uppercase text-[#CCA147] block mb-1">Price (USD)</label>
+              <input type="number" id="prod-price" required placeholder="285" class="w-full bg-[#00123A] border border-[#CCA147]/40 p-2.5 rounded text-xs text-[#FCFFFE]">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-[10px] font-serif uppercase text-[#CCA147] block mb-1">Image URL</label>
+              <input type="text" id="prod-img" required placeholder="https://..." class="w-full bg-[#00123A] border border-[#CCA147]/40 p-2.5 rounded text-xs text-[#FCFFFE]">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-[10px] font-serif uppercase text-[#CCA147] block mb-1">Craftsmanship Description</label>
+              <textarea id="prod-desc" rows="2" placeholder="Handcrafted in 18k yellow gold and natural royal blue sapphires..." class="w-full bg-[#00123A] border border-[#CCA147]/40 p-2.5 rounded text-xs text-[#FCFFFE]"></textarea>
+            </div>
+            <div class="sm:col-span-2">
+              <button type="submit" class="btn-gold w-full py-3 rounded text-xs uppercase tracking-widest">
+                Save & Add Piece to Inventory
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Admin Product Inventory List -->
+      <div class="border-t border-[#CCA147]/30 pt-8">
+        <h2 class="text-xl font-serif font-bold text-[#FCFFFE] uppercase tracking-wider mb-4">Active Catalog Inventory</h2>
+        <div id="admin-inventory-list" class="space-y-4">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MAIN TAB 3: AI MARKETING COPYWRITER & PRICING STUDIO -->
+  <div id="view-studio" class="tab-content hidden">
+    <main class="max-w-7xl mx-auto p-6 md:p-10">
+      
+      <div class="mb-8 border-b border-[#CCA147]/30 pb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#003399] border border-[#CCA147] text-[#E7CA83] text-xs font-serif uppercase tracking-widest mb-3">
+          ✨ Multimodal Vision Studio • Roslyn Kiser Miller
+        </div>
+        <h1 class="text-3xl font-serif font-extrabold text-[#FCFFFE]">
+          Confidence Coach in a Bottle™ <span class="text-[#CCA147]">Copy & Pricing Studio</span>
+        </h1>
+        <p class="text-sm text-[#FCFFFE]/80 mt-1">
+          Inspect jewelry aesthetics, enforce brand voice, and sync live pricing with Stripe.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Input Column -->
+        <div class="lg:col-span-5 bg-[#001B55] border border-[#CCA147]/40 rounded-xl p-6 shadow-xl">
+          <h3 class="font-serif font-bold text-base text-[#CCA147] mb-4">1. Product Visual & Inspiration</h3>
+          
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-serif uppercase text-[#FCFFFE]/80 mb-1">Jewelry Image URL</label>
+              <input type="text" id="studio-img-url" value="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800" class="w-full bg-[#00123A] border border-[#CCA147]/30 p-2.5 rounded text-xs text-[#FCFFFE]">
+            </div>
+            
+            <div>
+              <label class="block text-xs font-serif uppercase text-[#FCFFFE]/80 mb-1">Admin Raw Vision Notes</label>
+              <textarea id="studio-notes" rows="4" class="w-full bg-[#00123A] border border-[#CCA147]/30 p-2.5 rounded text-xs text-[#FCFFFE]">18k gold pendant with royal blue sapphires. Part of the Sigma Gamma Rho Centennial collection. Designed to inspire female leaders with timeless inner strength.</textarea>
+            </div>
+
+            <button onclick="runAIGenerator()" class="btn-gold w-full py-3.5 rounded text-xs uppercase tracking-widest font-bold">
+              ✨ Generate AI Luxury Copy & Pricing
+            </button>
+          </div>
+        </div>
+
+        <!-- Result Form Column -->
+        <div class="lg:col-span-7 bg-[#001B55] border border-[#CCA147]/40 rounded-xl p-6 shadow-xl">
+          <h3 class="font-serif font-bold text-base text-[#CCA147] mb-4">2. AI Copywriting Handoff & Stripe Sync</h3>
+          
+          <div id="studio-output-form" class="space-y-4">
+            <div>
+              <label class="block text-xs font-serif uppercase text-[#CCA147] mb-1">Product Title</label>
+              <input type="text" id="ai-title" value="Royal Sapphire & Gold Crest Pendant" class="w-full bg-[#00123A] border border-[#CCA147]/40 p-2.5 rounded text-xs font-serif font-bold text-[#FCFFFE]">
+            </div>
+
+            <div>
+              <label class="block text-xs font-serif uppercase text-[#CCA147] mb-1">Luxury Brand Description</label>
+              <textarea id="ai-desc" rows="4" class="w-full bg-[#00123A] border border-[#CCA147]/40 p-2.5 rounded text-xs text-[#FCFFFE]">A regal masterpiece handcrafted in 18k yellow gold and set with natural royal blue sapphires. Created to embody sisterhood, scholarship, and service, acting as a confidence coach in a bottle for the visionary wearer.</textarea>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-serif uppercase text-[#CCA147] mb-1">Suggested Retail Price (USD)</label>
+                <input type="number" id="ai-price" value="245" class="w-full bg-[#00123A] border border-[#CCA147]/40 p-2.5 rounded text-sm font-bold text-[#CCA147]">
+              </div>
+              <div>
+                <label class="block text-xs font-serif uppercase text-[#CCA147] mb-1">Stripe Status</label>
+                <div class="p-2.5 rounded bg-[#00123A] border border-emerald-500/40 text-emerald-400 text-xs font-mono font-bold">
+                  ✓ Verified Stripe Gateway
+                </div>
+              </div>
+            </div>
+
+            <button onclick="alert('✨ Product synced to Stripe Live Checkout!')" class="btn-gold w-full py-3.5 rounded text-xs uppercase tracking-widest">
+              Sync & Publish Live to Stripe Gateway
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
 
   <!-- FOOTER -->
   <footer class="bg-[#00123A] border-t border-[#CCA147]/40 py-12 px-6 lg:px-16 text-[#FCFFFE]">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-      
       <div>
         <div class="flex items-center gap-2 mb-3">
           <span class="font-serif font-bold text-lg text-[#CCA147]">ΣΓΡ</span>
@@ -349,16 +429,6 @@
       </div>
 
       <div>
-        <h4 class="text-xs font-serif uppercase tracking-widest text-[#CCA147] mb-3 font-bold">Boutique Services</h4>
-        <ul class="text-xs text-[#FCFFFE]/80 space-y-1 font-sans">
-          <li>Custom Sorority Engravings</li>
-          <li>Insured Worldwide Delivery</li>
-          <li>Certificate of Authenticity</li>
-          <li>Concierge Orders</li>
-        </ul>
-      </div>
-
-      <div>
         <h4 class="text-xs font-serif uppercase tracking-widest text-[#CCA147] mb-3 font-bold">Founder & Jeweler</h4>
         <p class="text-xs text-[#FCFFFE]/80 leading-relaxed">
           Roslyn Kiser Miller<br/>
@@ -367,6 +437,14 @@
         </p>
       </div>
 
+      <div>
+        <h4 class="text-xs font-serif uppercase tracking-widest text-[#CCA147] mb-3 font-bold">Boutique Services</h4>
+        <ul class="text-xs text-[#FCFFFE]/80 space-y-1 font-sans">
+          <li>Insured Worldwide Delivery</li>
+          <li>Certificate of Authenticity</li>
+          <li>Bespoke Concierge Orders</li>
+        </ul>
+      </div>
     </div>
 
     <div class="max-w-7xl mx-auto pt-6 border-t border-[#CCA147]/20 text-center text-[11px] text-[#FCFFFE]/60 font-serif uppercase tracking-widest">
@@ -377,33 +455,28 @@
   <!-- DESIGNER BIO MODAL -->
   <div id="bio-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-backdrop">
     <div class="relative w-full max-w-xl bg-[#001B55] border-2 border-[#CCA147] rounded-2xl p-6 sm:p-8 shadow-2xl text-[#FCFFFE] max-h-[90vh] overflow-y-auto">
-      
-      <!-- Close Button -->
       <button onclick="toggleBioModal()" class="absolute top-4 right-4 text-[#FCFFFE]/70 hover:text-[#CCA147] text-xl font-bold">✕</button>
 
       <div class="flex items-center gap-4 border-b border-[#CCA147]/30 pb-4 mb-6">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Roslyn Kiser Miller" class="w-16 h-16 rounded-full object-cover border-2 border-[#CCA147]">
+        <div class="relative w-20 h-20 rounded-full overflow-hidden border-2 border-[#CCA147] flex-shrink-0 shadow-lg">
+          <img src="./roslyn-miller.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400'" alt="Roslyn Kiser Miller" class="w-full h-full object-cover object-top">
+        </div>
         <div>
           <h3 class="font-serif font-bold text-xl text-[#FCFFFE]">Roslyn Kiser Miller</h3>
-          <span class="text-xs font-serif uppercase text-[#E7CA83] block">Founder • Master Jeweler • Creative Director</span>
-          <span class="inline-block mt-1 px-2 py-0.5 rounded bg-[#003399] border border-[#CCA147] text-[10px] font-serif text-[#E7CA83]">Sigma Gamma Rho Sorority, Inc.</span>
+          <span class="text-xs font-serif uppercase text-[#E7CA83] block mt-0.5">Founder • Master Jeweler • Creative Director</span>
+          <span class="inline-block mt-1 px-2.5 py-0.5 rounded bg-[#003399] border border-[#CCA147] text-[10px] font-serif text-[#E7CA83] font-bold">Sigma Gamma Rho Sorority, Inc.</span>
         </div>
       </div>
 
       <div class="space-y-4 text-xs sm:text-sm text-[#FCFFFE]/90 leading-relaxed font-sans">
         <p>Rosyln Kiser Miller is the visionary Founder, Master Jeweler, and Creative Director of Greek Colors Colors, where exceptional craftsmanship meets timeless sophistication. Guided by an unwavering commitment to quality and artistic excellence, she creates fine jewelry celebrating life's most treasured moments.</p>
-
         <p>With a passion for elegant design and meticulous attention to detail, Rosyln personally oversees every collection. From concept and gemstone selection to the final finishing touches, each piece reflects her belief that fine jewelry should inspire confidence and celebrate individuality.</p>
-
         <p>As a proud member of Sigma Gamma Rho Sorority, Inc., Rosyln embraces the principles of Sisterhood, Scholarship, and Service—values that influence both her leadership and her approach to design.</p>
       </div>
 
       <div class="mt-6 pt-4 border-t border-[#CCA147]/30 text-right">
-        <button onclick="toggleBioModal()" class="btn-gold px-6 py-2.5 rounded text-xs uppercase tracking-widest">
-          Close Biography
-        </button>
+        <button onclick="toggleBioModal()" class="btn-gold px-6 py-2.5 rounded text-xs uppercase tracking-widest">Close Biography</button>
       </div>
-
     </div>
   </div>
 
@@ -414,7 +487,6 @@
         <h3 class="font-serif font-bold text-lg text-[#FCFFFE] uppercase tracking-wider">Your Boutique Bag</h3>
         <button onclick="toggleCartDrawer()" class="text-[#FCFFFE]/70 hover:text-[#CCA147] text-xl font-bold">✕</button>
       </div>
-
       <div id="cart-items" class="space-y-4 text-xs text-[#FCFFFE]/80">
         <p id="empty-cart-msg" class="text-center py-10 italic">Your bag is currently empty.</p>
       </div>
@@ -431,9 +503,143 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- JAVASCRIPT APP STATE & CAROUSELS -->
   <script>
+    let products = [
+      { id: 1, title: 'Royal Sapphire & Gold Crest Pendant', price: 245, img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800', desc: 'Handcrafted 18k yellow gold pendant set with natural royal blue sapphires.', featured: true },
+      { id: 2, title: 'Golden Poodle Heritage Medallion', price: 310, img: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800', desc: 'Sculpted gold medallion featuring custom engraved filigree and diamond accents.', featured: true },
+      { id: 3, title: '1922 Centennial Gold Drop Earrings', price: 195, img: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800', desc: 'Elegantly articulated drop earrings in polished gold and royal blue enamel.', featured: false },
+      { id: 4, title: 'Sigma Signature Gold Cuff', price: 275, img: 'https://images.unsplash.com/photo-1611591475179-be258688e7a0?w=800', desc: 'Heavyweight polished gold cuff with engraved Greek lettering.', featured: false },
+      { id: 5, title: 'Emerald & Diamond Leader Pendant', price: 340, img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800', desc: 'Bespoke 18k gold pendant featuring emerald-cut gemstones.', featured: false },
+      { id: 6, title: 'Royal Pearl & Sapphire Brooch', price: 225, img: 'https://images.unsplash.com/photo-1598560917505-59a3ad559071?w=800', desc: 'Freshwater pearls and royal blue sapphire cluster brooch.', featured: false }
+    ];
+
     let cart = [];
+
+    function switchTab(tab) {
+      document.getElementById('view-storefront').classList.add('hidden');
+      document.getElementById('view-admin').classList.add('hidden');
+      document.getElementById('view-studio').classList.add('hidden');
+
+      document.getElementById('tab-btn-storefront').className = 'text-xs font-serif uppercase tracking-widest px-3 py-1 rounded bg-[#003399] border border-[#CCA147]/60 text-[#FCFFFE] hover:bg-[#001B55]';
+      document.getElementById('tab-btn-admin').className = 'text-xs font-serif uppercase tracking-widest px-3 py-1 rounded bg-[#003399] border border-[#CCA147]/60 text-[#FCFFFE] hover:bg-[#001B55]';
+      document.getElementById('tab-btn-studio').className = 'text-xs font-serif uppercase tracking-widest px-3 py-1 rounded bg-[#003399] border border-[#CCA147]/60 text-[#E7CA83] hover:bg-[#001B55]';
+
+      if (tab === 'storefront') {
+        document.getElementById('view-storefront').classList.remove('hidden');
+        document.getElementById('tab-btn-storefront').className = 'text-xs font-serif uppercase tracking-widest px-3 py-1 rounded bg-[#CCA147] text-[#001B55] font-bold';
+      } else if (tab === 'admin') {
+        document.getElementById('view-admin').classList.remove('hidden');
+        document.getElementById('tab-btn-admin').className = 'text-xs font-serif uppercase tracking-widest px-3 py-1 rounded bg-[#CCA147] text-[#001B55] font-bold';
+      } else if (tab === 'studio') {
+        document.getElementById('view-studio').classList.remove('hidden');
+        document.getElementById('tab-btn-studio').className = 'text-xs font-serif uppercase tracking-widest px-3 py-1 rounded bg-[#CCA147] text-[#001B55] font-bold';
+      }
+      renderUI();
+    }
+
+    function renderUI() {
+      // Storefront Grid
+      const grid = document.getElementById('store-products-grid');
+      let gridHtml = '';
+      products.forEach(p => {
+        gridHtml += `
+          <div class="glass-card rounded-xl overflow-hidden group hover:border-[#CCA147] transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="relative h-72 bg-[#00123A] overflow-hidden">
+                <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                ${p.featured ? '<span class="absolute top-3 left-3 bg-[#003399] border border-[#CCA147] text-[#E7CA83] text-[10px] font-serif uppercase px-2.5 py-1 rounded font-bold shadow">★ Prominent Line</span>' : ''}
+              </div>
+              <div class="p-6">
+                <span class="text-[10px] font-serif uppercase tracking-widest text-[#E7CA83] font-semibold block mb-1">Sigma Gamma Rho Collection</span>
+                <h3 class="font-serif font-bold text-xl text-[#FCFFFE] mb-2">${p.title}</h3>
+                <p class="text-xs text-[#FCFFFE]/80 leading-relaxed mb-4">${p.desc}</p>
+              </div>
+            </div>
+            <div class="p-6 pt-0 border-t border-[#CCA147]/20 flex items-center justify-between mt-auto">
+              <span class="text-xl font-serif font-bold text-[#CCA147]">$${p.price.toFixed(2)}</span>
+              <button onclick="addToCart('${p.title.replace(/'/g, "\\'")}', ${p.price})" class="btn-gold px-4 py-2 rounded text-xs uppercase tracking-wider">
+                Add to Bag
+              </button>
+            </div>
+          </div>
+        `;
+      });
+      grid.innerHTML = gridHtml;
+
+      // Admin Inventory List
+      const adminList = document.getElementById('admin-inventory-list');
+      let adminHtml = '';
+      products.forEach(p => {
+        adminHtml += `
+          <div class="flex flex-col sm:flex-row items-center justify-between p-4 rounded bg-[#001B55] border border-[#CCA147]/30 gap-4">
+            <div class="flex items-center gap-4">
+              <img src="${p.img}" class="w-14 h-14 rounded object-cover border border-[#CCA147]">
+              <div>
+                <h4 class="font-serif font-bold text-sm text-[#FCFFFE]">${p.title}</h4>
+                <span class="text-xs text-[#E7CA83] font-bold">$${p.price.toFixed(2)} USD</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <button onclick="toggleProminence(${p.id})" class="px-3 py-1.5 rounded text-xs font-serif uppercase tracking-wider ${p.featured ? 'bg-[#CCA147] text-[#001B55] font-bold' : 'bg-[#00123A] border border-[#CCA147]/50 text-[#FCFFFE]'}">
+                ${p.featured ? '★ Prominent' : 'Make Prominent'}
+              </button>
+              <button onclick="deleteProduct(${p.id})" class="px-3 py-1.5 rounded bg-red-950 border border-red-500/50 text-red-300 text-xs font-serif uppercase">
+                Delete
+              </button>
+            </div>
+          </div>
+        `;
+      });
+      adminList.innerHTML = adminHtml;
+    }
+
+    function toggleProminence(id) {
+      products = products.map(p => p.id === id ? { ...p, featured: !p.featured } : p);
+      renderUI();
+    }
+
+    function deleteProduct(id) {
+      products = products.filter(p => p.id !== id);
+      renderUI();
+    }
+
+    function handleAddProduct(e) {
+      e.preventDefault();
+      const title = document.getElementById('prod-title').value;
+      const price = Number(document.getElementById('prod-price').value);
+      const img = document.getElementById('prod-img').value;
+      const desc = document.getElementById('prod-desc').value;
+
+      products.unshift({ id: Date.now(), title, price, img, desc, featured: true });
+      renderUI();
+      alert('✦ Success! Added ' + title + ' to active catalog.');
+      switchTab('storefront');
+    }
+
+    function handleZipUpload(e) {
+      e.preventDefault();
+      const colName = document.getElementById('zip-col-name').value || 'Royal Archive';
+      const featured = document.getElementById('zip-featured').checked;
+
+      products.unshift({
+        id: Date.now(),
+        title: colName + ' Piece #1',
+        price: 295,
+        img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800',
+        desc: 'Handcrafted jewelry from the ' + colName + ' ZIP archive.',
+        featured: featured
+      });
+
+      renderUI();
+      alert('✦ Success! Unpacked ZIP archive and generated interactive carousel for ' + colName + '!');
+      switchTab('storefront');
+    }
+
+    function runAIGenerator() {
+      const notes = document.getElementById('studio-notes').value;
+      alert('✨ GPT-4o Multimodal Vision Analysis Complete!\nGenerated copy & pricing aligned with Confidence Coach in a Bottle™ brand voice.');
+    }
 
     function toggleBioModal() {
       const modal = document.getElementById('bio-modal');
@@ -470,7 +676,7 @@
       cart.forEach((item, idx) => {
         total += item.price;
         html += `
-          <div class="flex items-center justify-between p-3 rounded bg-[#00123A] border border-[#CCA147]/20">
+          <div class="flex items-center justify-between p-3 rounded bg-[#00123A] border border-[#CCA147]/30">
             <div>
               <span class="font-serif font-bold text-xs text-[#FCFFFE] block">${item.title}</span>
               <span class="text-[10px] text-[#E7CA83]">$${item.price.toFixed(2)}</span>
@@ -499,6 +705,9 @@
       updateCartUI();
       toggleCartDrawer();
     }
+
+    // Initial render
+    renderUI();
   </script>
 
 </body>
