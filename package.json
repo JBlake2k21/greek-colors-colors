@@ -1,0 +1,40 @@
+{
+  "name": "greek-colors-colors",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prisma": "prisma"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.27.20",
+    "@netlify/functions": "^5.3.0",
+    "@prisma/client": "5.13.0",
+    "@supabase/supabase-js": "2.44.0",
+    "autoprefixer": "10.4.15",
+    "framer-motion": "11.0.0",
+    "jszip": "^3.10.1",
+    "lucide-react": "^1.28.0",
+    "mongoose": "8.5.0",
+    "next": "14.2.0",
+    "next-auth": "4.24.5",
+    "openai": "^7.2.0",
+    "postcss": "8.4.31",
+    "prisma": "5.13.0",
+    "react": "18.3.0",
+    "react-dom": "18.3.0",
+    "stripe": "^22.4.0",
+    "tailwindcss": "3.4.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.2",
+    "@types/react": "18.3.3",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.0",
+    "typescript": "5.9.3"
+  }
+}
