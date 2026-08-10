@@ -2,15 +2,8 @@
 # Netlify Configuration for Next.js 14 App Router
 
 [build]
-  command = "npm run build"
+  command = "prisma generate && next build"
+  publish = ".next"
 
-# Automatically uses the Next.js Runtime on Netlify
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[functions]
-  included_files = ["!node_modules/next/dist/compiled/@next/swc*/**", "!*.zip", "!**/*.zip", "!.next/cache/**"]
-  node_bundler = "nft"
-
-[functions."___netlify-server-handler"]
-  included_files = ["!node_modules/next/dist/compiled/@next/swc*/**", "!*.zip", "!**/*.zip", "!.next/cache/**"]
+[build.environment]
+  NODE_VERSION = "20"
