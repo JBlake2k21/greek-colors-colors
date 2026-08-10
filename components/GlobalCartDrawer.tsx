@@ -9,7 +9,7 @@ export default function GlobalCartDrawer() {
   const { isCartOpen, closeCart, items, removeItem, clearCart } = useCart();
 
   const handleCheckout = () => {
-    alert("✨ Thank you for choosing Ears of Elegance! Our Bespoke Concierge will confirm your limited-edition order via email.");
+    alert("💙 Thank you for choosing Greek Colors Colors! Our Sorority Concierge will confirm your order via email.");
     clearCart();
     closeCart();
   };

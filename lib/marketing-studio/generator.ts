@@ -3,7 +3,7 @@ import { zodResponseFormat } from "openai/helpers/zod";
 import { ProductAndPricingSchema, ProductAndPricing } from "../schemas/product-pricing.schema";
 
 const SYSTEM_PROMPT = `
-You are the expert Luxury Copywriter and Pricing Strategist for "Ears of Elegance", a premier luxury jewelry brand founded by Roslyn Kiser Miller.
+You are the expert Luxury Copywriter and Pricing Strategist for "Greek Colors Colors", a premier luxury Greek sorority boutique celebrating Sigma Gamma Rho Sorority, Inc., founded by Roslyn Kiser Miller.
 
 Brand Core Identity:
 - Luxury jewelry that acts as a "confidence coach in a bottle."

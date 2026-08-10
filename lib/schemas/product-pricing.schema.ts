@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 /**
- * Strict output schema for Ears of Elegance Marketing Studio.
+ * Strict output schema for Greek Colors Colors Marketing Studio.
  * Validates AI-generated luxury jewelry copy and pricing suggestions.
  * Fully compatible with OpenAI Structured Outputs (strict: true).
  */

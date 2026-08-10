@@ -23,30 +23,30 @@ export default function AdminNavbar({ onSignOut }: AdminNavbarProps) {
   };
 
   return (
-    <nav className="sticky top-0 z-40 bg-[#1D0B2E]/95 backdrop-blur-xl border-b border-[#D4AF37]/25 px-6 md:px-12 py-4 text-[#FAF9F6] shadow-2xl flex items-center justify-between">
+    <nav className="sticky top-0 z-40 bg-[#001B55]/95 backdrop-blur-xl border-b border-[#CCA147]/40 px-6 md:px-12 py-4 text-[#FCFFFE] shadow-2xl flex items-center justify-between">
       <div className="flex items-center space-x-6">
         <Link
           href="/admin/dashboard"
-          className="font-serif font-bold text-lg md:text-xl tracking-[0.2em] text-gold-gradient flex items-center gap-2 hover:opacity-90 transition"
+          className="font-serif font-bold text-lg md:text-xl tracking-[0.2em] text-[#CCA147] flex items-center gap-2 hover:text-[#E7CA83] transition"
         >
-          <span className="h-2 w-2 rounded-full bg-[#D4AF37] inline-block animate-pulse"></span>
-          EARS OF ELEGANCE • ADMIN
+          <span className="h-2 w-2 rounded-full bg-[#CCA147] inline-block animate-pulse"></span>
+          GREEK COLORS COLORS • ADMIN
         </Link>
         <Link
           href="/admin/dashboard"
-          className="text-xs font-serif uppercase tracking-widest text-[#FAF9F6]/80 hover:text-[#D4AF37] transition underline-offset-4 hover:underline"
+          className="text-xs font-serif uppercase tracking-widest text-[#FCFFFE]/90 hover:text-[#CCA147] transition underline-offset-4 hover:underline"
         >
           Catalog
         </Link>
         <Link
           href="/admin/marketing-studio"
-          className="text-xs font-serif uppercase tracking-widest text-[#D4AF37] font-semibold hover:opacity-80 transition underline-offset-4 hover:underline flex items-center gap-1"
+          className="text-xs font-serif uppercase tracking-widest text-[#CCA147] font-semibold hover:text-[#E7CA83] transition underline-offset-4 hover:underline flex items-center gap-1"
         >
           <span>✨</span> AI Marketing Studio
         </Link>
         <Link
           href="/products"
-          className="text-xs font-serif uppercase tracking-widest text-[#FAF9F6]/60 hover:text-[#FAF9F6] transition underline-offset-4 hover:underline"
+          className="text-xs font-serif uppercase tracking-widest text-[#FCFFFE]/70 hover:text-[#FCFFFE] transition underline-offset-4 hover:underline"
         >
           ← View Storefront
         </Link>
@@ -54,7 +54,7 @@ export default function AdminNavbar({ onSignOut }: AdminNavbarProps) {
       <div>
         <button
           onClick={handleSignOut}
-          className="rounded-sm border border-[#D4AF37]/40 bg-[#121212] hover:bg-[#2E1A47] px-5 py-2 text-xs font-serif uppercase tracking-widest font-semibold text-[#FAF9F6] transition shadow-sm hover:border-[#D4AF37]"
+          className="rounded-sm border border-[#CCA147]/60 bg-[#002677] hover:bg-[#003399] px-5 py-2 text-xs font-serif uppercase tracking-widest font-semibold text-[#FCFFFE] transition shadow-sm hover:border-[#CCA147]"
         >
           Sign Out
         </button>

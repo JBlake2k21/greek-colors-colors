@@ -19,9 +19,9 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "Greek Colors | Sigma Gamma Rho Sorority, Inc. Collection",
+  title: "Greek Colors Colors | Sigma Gamma Rho Sorority, Inc. Official Collection",
   description:
-    "Official luxury Greek boutique featuring exclusive Royal Blue & Gold collections celebrating Sigma Gamma Rho Sorority, Inc. Handcrafted jewelry, custom accessories, and bespoke gifts.",
+    "Official luxury Greek boutique featuring exclusive Royal Blue (#003399) & Gold (#CCA147) collections celebrating Sigma Gamma Rho Sorority, Inc. Handcrafted jewelry, custom accessories, and bespoke gifts.",
 };
 
 export default function RootLayout({
@@ -32,9 +32,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${jakarta.variable} bg-[#080B10] text-[#FAF9F6]`}
+      className={`${playfair.variable} ${jakarta.variable} bg-[#001B55] text-[#FCFFFE]`}
     >
-      <body className="min-h-screen flex flex-col font-sans antialiased bg-[#080B10] text-[#FAF9F6] selection:bg-[#0033A0]/40 selection:text-[#FFD700]">
+      <body className="min-h-screen flex flex-col font-sans antialiased bg-[#001B55] text-[#FCFFFE] selection:bg-[#003399]/60 selection:text-[#E7CA83]">
         <CartProvider>
           <PrimaryNav />
           <main className="flex-1">{children}</main>

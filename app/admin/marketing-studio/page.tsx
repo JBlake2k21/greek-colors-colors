@@ -151,7 +151,7 @@ export default function MarketingStudioPage() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-serif uppercase tracking-widest mb-3">
               <Sparkles className="w-3.5 h-3.5 animate-spin-slow" />
-              AI Copy & Pricing Studio • Ears of Elegance
+              AI Copy & Pricing Studio • Greek Colors Colors
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold tracking-tight text-white">
               Confidence Coach in a Bottle™ <span className="text-gold-gradient">Studio</span>

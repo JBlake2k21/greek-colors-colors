@@ -40,7 +40,7 @@ export async function publishProductLink(payload: any) {
     name: product_title,
     description: luxury_description,
     metadata: {
-      brand: "Ears of Elegance",
+      brand: "Greek Colors Colors",
       pricing_type: pricing_type,
       materials: materials_list.join(", "),
     },

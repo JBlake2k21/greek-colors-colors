@@ -115,7 +115,7 @@ export default function AdminDashboard() {
         method: "POST",
         body: JSON.stringify({
           name: newCollectionName.trim(),
-          description: `Ears of Elegance — ${newCollectionName.trim()}`,
+          description: `Greek Colors Colors — ${newCollectionName.trim()}`,
           isFeatured: newCollectionFeatured,
           displayOrder: collections.length + 1,
         }),

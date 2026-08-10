@@ -80,7 +80,7 @@ export async function POST(request: Request) {
         data: {
           name: collectionName,
           description:
-            description || `Ears of Elegance — ${collectionName} Archive`,
+            description || `Greek Colors Colors — ${collectionName} Archive`,
           displayOrder: nextOrder,
           isFeatured: isFeatured,
           images: JSON.stringify(extractedImages.map((img) => img.urlPath)),
@@ -133,7 +133,7 @@ export async function POST(request: Request) {
           id: fallbackId,
           name: collectionName,
           description:
-            description || `Ears of Elegance — ${collectionName} Archive`,
+            description || `Greek Colors Colors — ${collectionName} Archive`,
           displayOrder: 99,
           isFeatured: isFeatured,
           images: JSON.stringify(extractedImages.map((img) => img.urlPath)),
