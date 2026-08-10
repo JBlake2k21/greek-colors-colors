@@ -1,0 +1,185 @@
+[
+  {
+    "id": "col-1",
+    "name": "Caribbean Collection",
+    "isFeatured": true,
+    "images": [
+      "./collections/Caribbean Collection/Caribbean Collection/0E9AACD7-8B43-4300-B88E-EEECD7335AC2.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/1464D560-07B6-4B6E-9B37-F77060304930.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/2BD34A7C-5247-4671-A588-0458EA24885B.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/2F13CAA5-E3C8-410A-B073-6B884B338A49.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/31A79F50-AA7E-461F-BE39-24CBB2EBE012.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/45141433-EBFF-4BA0-8D98-1B0768CE081F.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/58B88DCB-BD5D-4C68-89DE-B06968FB99B3.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/61941058-ED74-4913-8844-F678CE802A60.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/704981EC-F7AE-4199-BB57-C3AD4BE70F1A.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/714177FB-A203-4A89-887E-CA5A990C77D8.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/7C5A758C-80A1-41D4-A6E7-EEF1CD1D4F3A.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/7E000979-4A7E-4A45-8806-599E870B8D2D.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/9AB55E0C-F41C-490F-9D05-5AD7E45928DB.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/A0853152-F1A3-459C-AA4D-832795DF7F75.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/AAEDB301-E03A-4D06-8547-8D08D7646683.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/AE7D385D-A271-40D3-A4CB-B998FAD398F0.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/BA665149-17EA-49BC-BCAE-EE11F7156A1E.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/BAD1BCFC-F794-48F4-A28F-BA4E0C2B1D5D.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/E85AFC64-EBDB-4945-90A9-FCEF6CA8413A.JPG",
+      "./collections/Caribbean Collection/Caribbean Collection/F398FF6E-D6B4-40EB-A2D6-2F6C20EAE28C.JPG"
+    ]
+  },
+  {
+    "id": "col-2",
+    "name": "Christian Collection selected",
+    "isFeatured": true,
+    "images": [
+      "./collections/Christian Collection-selected/2313523E-2234-42FC-8C08-4BB3BD7ABD67.JPG",
+      "./collections/Christian Collection-selected/4C520BDB-5C93-4B44-9963-17047C9DB190.JPG",
+      "./collections/Christian Collection-selected/ECAD4087-0F0F-485A-B21C-EBE9E66AC6B9.JPG",
+      "./collections/Christian Collection-selected/FullSizeRender.jpg",
+      "./collections/Christian Collection-selected/IMG_2387.JPG",
+      "./collections/Christian Collection-selected/IMG_3609.JPG",
+      "./collections/Christian Collection-selected/IMG_4135.JPG",
+      "./collections/Christian Collection-selected/IMG_4136.JPG",
+      "./collections/Christian Collection-selected/IMG_4137.JPG",
+      "./collections/Christian Collection-selected/IMG_4138.JPG",
+      "./collections/Christian Collection-selected/IMG_4139.JPG",
+      "./collections/Christian Collection-selected/IMG_4140.JPG",
+      "./collections/Christian Collection-selected/IMG_4141.JPG"
+    ]
+  },
+  {
+    "id": "col-3",
+    "name": "Cobra Collection",
+    "isFeatured": true,
+    "images": [
+      "./collections/Cobra Collection/Cobra Collection/531C9604-A633-46C3-8846-F35206871CCA.JPG",
+      "./collections/Cobra Collection/Cobra Collection/60F31335-25EC-45DD-A22F-523D5AB0F2A1.JPG",
+      "./collections/Cobra Collection/Cobra Collection/6A276620-1C11-4E7A-A3A9-E4CCF7AAA6B1.JPG",
+      "./collections/Cobra Collection/Cobra Collection/7D8424C0-5AC9-48AE-8C30-F331F43C4BAA.JPG",
+      "./collections/Cobra Collection/Cobra Collection/C1B7BEAE-B13B-4C6E-A2EB-56BD8E87E0E2.JPG",
+      "./collections/Cobra Collection/Cobra Collection/D3EF9F32-5586-4CFD-B9E5-E914A8CB9565.JPG",
+      "./collections/Cobra Collection/Cobra Collection/D408C954-A58C-474B-BE72-D98079FCEA0A.JPG",
+      "./collections/Cobra Collection/Cobra Collection/E728F53E-BDD0-4252-B822-DB0624D9C3A5.JPG",
+      "./collections/Cobra Collection/Cobra Collection/FCEB73B5-7902-4960-9566-2AAA919D7828.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3499.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3500.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3501.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3502.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3503.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3504.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3505.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3507.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3508.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3509.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3510.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3511.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3512.JPG",
+      "./collections/Cobra Collection/Cobra Collection/IMG_3514.JPG"
+    ]
+  },
+  {
+    "id": "col-4",
+    "name": "Greek Collection",
+    "isFeatured": true,
+    "images": [
+      "./collections/Greek Collection/Greek Collection/4E5F3DF8-8C84-4DA5-8D53-2758679195B6.JPG",
+      "./collections/Greek Collection/Greek Collection/6201E77C-2D8E-40F1-8953-3B2630A8BC88.JPG",
+      "./collections/Greek Collection/Greek Collection/74BA1797-3883-40C0-9AEF-27E35B4E0252.JPG",
+      "./collections/Greek Collection/Greek Collection/9279868F-5139-4975-89FD-668F936072F5.JPG",
+      "./collections/Greek Collection/Greek Collection/FCEB73B5-7902-4960-9566-2AAA919D7828.JPG",
+      "./collections/Greek Collection/Greek Collection/IMG_3675.JPG"
+    ]
+  },
+  {
+    "id": "col-6",
+    "name": "Holiday Collection",
+    "isFeatured": false,
+    "images": [
+      "./collections/Holiday Collection/Holiday Collection/FullSizeRender-1.jpg",
+      "./collections/Holiday Collection/Holiday Collection/FullSizeRender-2.jpg",
+      "./collections/Holiday Collection/Holiday Collection/FullSizeRender.jpg"
+    ]
+  },
+  {
+    "id": "col-7",
+    "name": "Hoops",
+    "isFeatured": false,
+    "images": [
+      "./collections/Hoops/Hoops/1464D560-07B6-4B6E-9B37-F77060304930.JPG",
+      "./collections/Hoops/Hoops/158677F3-311F-4481-AEAC-B5B0897FE0F2.JPG",
+      "./collections/Hoops/Hoops/412A7C20-8C5F-4317-8631-8685BE9AFD5D.JPG",
+      "./collections/Hoops/Hoops/449A21DC-C2E1-42F2-9D6C-26CAAF0906FC.JPG",
+      "./collections/Hoops/Hoops/4B78EF4D-DB84-4674-82A4-788D2BECE8F2.JPG",
+      "./collections/Hoops/Hoops/531C9604-A633-46C3-8846-F35206871CCA.JPG",
+      "./collections/Hoops/Hoops/60F31335-25EC-45DD-A22F-523D5AB0F2A1.JPG",
+      "./collections/Hoops/Hoops/6A276620-1C11-4E7A-A3A9-E4CCF7AAA6B1.JPG",
+      "./collections/Hoops/Hoops/6C45AACF-C27D-4732-8380-EE461F3BEB32.JPG",
+      "./collections/Hoops/Hoops/6F224E31-60C8-4989-889E-2336DF4FF3E6.JPG",
+      "./collections/Hoops/Hoops/6F8DDED9-4233-42CA-9892-EE362BF25989.JPG",
+      "./collections/Hoops/Hoops/714177FB-A203-4A89-887E-CA5A990C77D8.JPG",
+      "./collections/Hoops/Hoops/7C2CC19D-77E8-416E-8FC2-7DF4F408320A.JPG",
+      "./collections/Hoops/Hoops/7E000979-4A7E-4A45-8806-599E870B8D2D.JPG",
+      "./collections/Hoops/Hoops/8B038360-D1F0-4797-9E2D-4E7AB38309EC.JPG",
+      "./collections/Hoops/Hoops/8E80081D-A419-404C-ABA6-9173A0DC63AB.JPG",
+      "./collections/Hoops/Hoops/9458C55E-F812-4423-A35D-61CD52BB626E.JPG",
+      "./collections/Hoops/Hoops/A0853152-F1A3-459C-AA4D-832795DF7F75.JPG",
+      "./collections/Hoops/Hoops/AA178024-3ED5-433F-A0A5-744C8F3E777B.JPG",
+      "./collections/Hoops/Hoops/AE7D385D-A271-40D3-A4CB-B998FAD398F0.JPG",
+      "./collections/Hoops/Hoops/BAD1BCFC-F794-48F4-A28F-BA4E0C2B1D5D.JPG",
+      "./collections/Hoops/Hoops/BB2B360C-6022-4DD7-9CD2-AA6151EE65DD.JPG",
+      "./collections/Hoops/Hoops/C1B7BEAE-B13B-4C6E-A2EB-56BD8E87E0E2.JPG",
+      "./collections/Hoops/Hoops/D3EF9F32-5586-4CFD-B9E5-E914A8CB9565.JPG",
+      "./collections/Hoops/Hoops/DD6259D7-2E64-41EE-A993-E6B70F5EE1F9.JPG",
+      "./collections/Hoops/Hoops/E511C475-C286-4BE5-A099-089F797477F5.PNG",
+      "./collections/Hoops/Hoops/E72A123D-7302-4512-A0E1-AAD78363BD19.JPG",
+      "./collections/Hoops/Hoops/E85AFC64-EBDB-4945-90A9-FCEF6CA8413A.JPG",
+      "./collections/Hoops/Hoops/EE5F076D-58B0-4684-BCA1-24920BAD5DDD.JPG"
+    ]
+  },
+  {
+    "id": "col-8",
+    "name": "New",
+    "isFeatured": false,
+    "images": [
+      "./collections/New/New/IMG_3665.JPG",
+      "./collections/New/New/IMG_3667.JPG",
+      "./collections/New/New/IMG_3668.JPG",
+      "./collections/New/New/IMG_3671.JPG",
+      "./collections/New/New/IMG_3673.JPG",
+      "./collections/New/New/IMG_3675.JPG",
+      "./collections/New/New/IMG_3677.JPG"
+    ]
+  },
+  {
+    "id": "col-9",
+    "name": "Wedding collection",
+    "isFeatured": false,
+    "images": [
+      "./collections/Wedding collection/Wedding collection/87DC5C96-9864-499D-A3BB-C4ACA7A74B61.JPG",
+      "./collections/Wedding collection/Wedding collection/8A43A996-CD2A-4822-B1FE-543DEDB0FF06.JPG",
+      "./collections/Wedding collection/Wedding collection/8E80081D-A419-404C-ABA6-9173A0DC63AB.JPG",
+      "./collections/Wedding collection/Wedding collection/92178489-015D-4A59-9BD4-65BB7BA79C2A.JPG",
+      "./collections/Wedding collection/Wedding collection/B89EA470-CE55-44B0-9577-69B33AC6D69C.JPG",
+      "./collections/Wedding collection/Wedding collection/IMG_3960.JPG"
+    ]
+  },
+  {
+    "id": "col-10",
+    "name": "Wire Collection",
+    "isFeatured": false,
+    "images": [
+      "./collections/Wire Collection/Wire Collection/6A0A12B3-C50C-40BA-9395-9E5D55779C19.JPG",
+      "./collections/Wire Collection/Wire Collection/81A7C1C6-4DDE-4F93-8EFC-167277FA4B92.JPG",
+      "./collections/Wire Collection/Wire Collection/F226880D-8C7F-44E4-9DE7-85723275AD28.JPG",
+      "./collections/Wire Collection/Wire Collection/F537EAFE-FA55-4FCC-A64C-5487A1A31EBA.JPG",
+      "./collections/Wire Collection/Wire Collection/IMG_2472.JPG",
+      "./collections/Wire Collection/Wire Collection/IMG_2473.JPG",
+      "./collections/Wire Collection/Wire Collection/IMG_2480.JPG",
+      "./collections/Wire Collection/Wire Collection/IMG_2481.JPG",
+      "./collections/Wire Collection/Wire Collection/IMG_2490.JPG",
+      "./collections/Wire Collection/Wire Collection/IMG_2492.JPG",
+      "./collections/Wire Collection/Wire Collection/IMG_2494.JPG",
+      "./collections/Wire Collection/Wire Collection/IMG_2501.JPG",
+      "./collections/Wire Collection/Wire Collection/IMG_2509.JPG"
+    ]
+  }
+]
