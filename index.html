@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greek Colors Colors — Award-Winning Interactive Experience & Luxury Boutique</title>
-  <meta name="description" content="Wear Your Colors. Carry the legacy. Greek Colors Colors creates elevated fine jewelry & custom apparel celebrating Sigma Gamma Rho Sorority, Inc. Official Royal Blue (#003399) & Gold (#CCA147) collection by Founder & Master Jeweler Roslyn Kiser Miller.">
+  <title>Greek Colors Colors — Award-Winning Interactive Carousels & Boutique</title>
+  <meta name="description" content="Wear Your Colors. Carry the legacy. Greek Colors Colors features interactive collection carousels showcasing Sigma Gamma Rho Sorority, Inc. fine jewelry in Royal Blue (#003399) & Gold (#CCA147) by Master Jeweler Roslyn Kiser Miller.">
   
   <!-- Premium Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,6 @@
   </script>
 
   <style>
-    /* Award-Winning Custom Styles & Shaders */
     :root {
       --sgrho-royal: #003399;
       --sgrho-deep: #001B55;
@@ -50,7 +49,7 @@
     }
 
     * {
-      cursor: none !important; /* Custom Cursor Engaged */
+      cursor: none !important;
     }
 
     body {
@@ -60,7 +59,6 @@
       overflow-x: hidden;
     }
 
-    /* Metallic Gold Gradient Typography */
     .gold-gradient-text {
       background: linear-gradient(135deg, #CCA147 0%, #FFF5DA 45%, #CCA147 70%, #E7CA83 100%);
       -webkit-background-clip: text;
@@ -68,11 +66,6 @@
       background-clip: text;
     }
 
-    .gold-gradient-border {
-      border-image: linear-gradient(135deg, #CCA147, #E7CA83, #CCA147) 1;
-    }
-
-    /* Interactive Gold Pulse Button */
     .btn-gold {
       background: linear-gradient(135deg, #CCA147 0%, #E7CA83 50%, #CCA147 100%);
       color: #001B55;
@@ -101,9 +94,8 @@
       box-shadow: 0 8px 35px rgba(204, 161, 71, 0.65);
     }
 
-    /* Liquid Glass Card System */
     .glass-liquid {
-      background: rgba(0, 27, 85, 0.75);
+      background: rgba(0, 27, 85, 0.78);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(204, 161, 71, 0.35);
@@ -111,7 +103,7 @@
     }
 
     .glass-nav {
-      background: rgba(0, 27, 85, 0.85);
+      background: rgba(0, 27, 85, 0.88);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid rgba(204, 161, 71, 0.3);
@@ -151,7 +143,6 @@
       transition: transform 0.18s ease-out, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
     }
 
-    /* Cursor Hover State */
     .cursor-active #custom-cursor {
       width: 48px;
       height: 48px;
@@ -164,44 +155,26 @@
       border-color: #E7CA83;
     }
 
-    /* Act Reveal Animations */
-    .act-section {
-      opacity: 0;
-      transform: translateY(35px);
-      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Carousel Track Smooth Scroll */
+    .carousel-track {
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
     }
-    .act-section.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #00123A;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #003399;
-      border: 1px solid #CCA147;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #CCA147;
+    .carousel-track::-webkit-scrollbar {
+      display: none;
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-[#CCA147] selection:text-[#001B55]">
 
-  <!-- CUSTOM AURA CURSOR SYSTEM -->
+  <!-- CUSTOM CURSOR -->
   <div id="custom-cursor"></div>
   <div id="custom-cursor-follower"></div>
 
-  <!-- CANVAS PARTICLES & AMBIENT ATMOSPHERE -->
+  <!-- CANVAS PARTICLES & SHADERS -->
   <canvas id="hero-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
-  <!-- TOP EDITORIAL ANNOUNCEMENT BANNER -->
+  <!-- TOP BANNER -->
   <div class="relative z-50 bg-[#001B55] border-b border-[#CCA147]/40 py-2.5 px-4 text-center text-xs font-serif tracking-[0.25em] text-[#E7CA83] flex items-center justify-between">
     <div class="hidden sm:flex items-center gap-2">
       <span class="inline-block w-2 h-2 rounded-full bg-[#CCA147] animate-pulse"></span>
@@ -220,11 +193,11 @@
     </div>
   </div>
 
-  <!-- FLOATING LIQUID-GLASS NAVIGATION -->
+  <!-- FLOATING LIQUID NAV -->
   <header class="sticky top-0 z-40 glass-nav px-6 lg:px-16 py-4">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       
-      <!-- EDITORIAL BRAND LOGO -->
+      <!-- BRAND LOGO -->
       <a href="#" onclick="switchTab('storefront')" class="interactive-el flex items-center gap-3 group">
         <div class="w-11 h-11 rounded-full border-2 border-[#CCA147] flex items-center justify-center bg-[#003399] text-[#CCA147] font-serif font-bold text-lg shadow-[0_0_25px_rgba(204,161,71,0.5)] group-hover:scale-105 transition-transform">
           ΣΓΡ
@@ -248,8 +221,8 @@
       <nav class="hidden md:flex items-center space-x-8 text-xs font-serif uppercase tracking-[0.2em] text-[#FCFFFE]/90">
         <a href="#act-identity" onclick="switchTab('storefront')" class="interactive-el hover:text-[#CCA147] transition">I. Identity</a>
         <a href="#act-sisterhood" onclick="switchTab('storefront')" class="interactive-el hover:text-[#CCA147] transition">II. Sisterhood</a>
-        <a href="#act-craft" onclick="switchTab('storefront')" class="interactive-el hover:text-[#CCA147] transition">III. Craft</a>
-        <a href="#act-expression" onclick="switchTab('storefront')" class="interactive-el hover:text-[#CCA147] transition">IV. Collections</a>
+        <a href="#act-carousels" onclick="switchTab('storefront')" class="interactive-el hover:text-[#CCA147] transition">III. Collection Carousels</a>
+        <a href="#act-craft" onclick="switchTab('storefront')" class="interactive-el hover:text-[#CCA147] transition">IV. Craft</a>
         <a href="#act-legacy" onclick="switchTab('storefront')" class="interactive-el hover:text-[#CCA147] transition">V. Legacy</a>
       </nav>
 
@@ -270,15 +243,12 @@
     </div>
   </header>
 
-  <!-- STOREFRONT CONTENT (5-ACT CINEMATIC ARCHITECTURE) -->
+  <!-- STOREFRONT CONTENT -->
   <div id="view-storefront" class="tab-content relative z-10">
 
-    <!-- ==========================================
-         ACT I — IDENTITY
-         ========================================== -->
-    <section id="act-identity" class="act-section min-h-[90vh] flex items-center justify-center relative py-24 px-6 lg:px-16 overflow-hidden bg-gradient-to-b from-[#00123A] via-[#001B55] to-[#003399]/30">
+    <!-- HERO SECTION -->
+    <section id="act-identity" class="min-h-[90vh] flex items-center justify-center relative py-24 px-6 lg:px-16 overflow-hidden bg-gradient-to-b from-[#00123A] via-[#001B55] to-[#003399]/30">
       
-      <!-- Lighting Atmosphere -->
       <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#003399]/35 rounded-full blur-[150px] pointer-events-none"></div>
       <div class="absolute top-1/4 right-10 w-[450px] h-[450px] bg-[#CCA147]/20 rounded-full blur-[130px] pointer-events-none"></div>
 
@@ -298,12 +268,12 @@
         </h1>
 
         <p class="max-w-2xl mx-auto text-base sm:text-lg text-[#FCFFFE]/90 font-sans leading-relaxed mb-12 font-light">
-          Carry the legacy. Make it unmistakably yours. Greek Colors Colors creates elevated fine jewelry and bespoke pieces inspired by identity, sisterhood, and the colors that connect generations.
+          Carry the legacy. Make it unmistakably yours. Explore interactive collection carousels showcasing Roslyn Kiser Miller's 120 authentic fine jewelry pieces across 9 curated suites.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
-          <a href="#act-expression" class="interactive-el btn-gold px-10 py-5 rounded-sm font-serif text-xs uppercase tracking-[0.25em] w-full sm:w-auto">
-            Explore 120 Royal Pieces →
+          <a href="#act-carousels" class="interactive-el btn-gold px-10 py-5 rounded-sm font-serif text-xs uppercase tracking-[0.25em] w-full sm:w-auto">
+            Explore Interactive Carousels →
           </a>
           <button onclick="toggleBioModal()" class="interactive-el px-10 py-5 rounded-sm border border-[#CCA147] bg-[#001B55]/80 text-[#FCFFFE] font-serif text-xs uppercase tracking-[0.25em] hover:bg-[#003399] transition w-full sm:w-auto">
             Meet Designer Roslyn Kiser Miller
@@ -328,7 +298,7 @@
       </div>
     </section>
 
-    <!-- PALETTE BAR STRIP -->
+    <!-- PALETTE STRIP -->
     <section class="py-8 bg-[#001B55] border-y border-[#CCA147]/30 px-6">
       <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
         <div class="p-4 rounded bg-[#003399] border border-[#CCA147]/40 shadow-md">
@@ -355,61 +325,31 @@
     </section>
 
     <!-- ==========================================
-         ACT II — SISTERHOOD
+         ACT III — DEDICATED COLLECTION CAROUSELS
          ========================================== -->
-    <section id="act-sisterhood" class="act-section py-24 px-6 lg:px-16 max-w-7xl mx-auto border-b border-[#CCA147]/25">
-      <div class="text-center mb-16">
-        <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#CCA147] block mb-3">Act II • Connection & Belonging</span>
+    <section id="act-carousels" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto space-y-20">
+      
+      <div class="text-center mb-10">
+        <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#CCA147] block mb-3">Act III • Interactive Collection Carousels</span>
         <h2 class="text-3xl sm:text-5xl font-serif font-bold text-[#FCFFFE] tracking-wide uppercase">
-          BOUND BY SISTERHOOD & HONOR
+          ROSLYN KISER MILLER SUITES
         </h2>
-        <p class="max-w-xl mx-auto text-sm text-[#FCFFFE]/80 mt-3 font-editorial italic">
-          &ldquo;Greater Service, Greater Progress — Founded in 1922.&rdquo;
-        </p>
+        <p class="text-xs text-[#FCFFFE]/80 mt-2 font-mono">Use the Left & Right Arrow controls to slide through each collection carousel</p>
         <div class="w-28 h-[2px] bg-gradient-to-r from-transparent via-[#CCA147] to-transparent mx-auto mt-6"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="glass-liquid p-8 rounded-2xl border-t-2 border-t-[#CCA147] text-center">
-          <div class="w-14 h-14 rounded-full bg-[#003399] border-2 border-[#CCA147] flex items-center justify-center text-xl font-serif font-bold text-[#CCA147] mx-auto mb-6 shadow-lg">
-            Σ
-          </div>
-          <h3 class="font-serif font-bold text-xl text-[#FCFFFE] mb-3">Sisterhood</h3>
-          <p class="text-xs text-[#FCFFFE]/80 leading-relaxed font-sans">
-            A lifelong bond rooted in mutual support, encouragement, and shared pride across generations of women leaders.
-          </p>
-        </div>
-
-        <div class="glass-liquid p-8 rounded-2xl border-t-2 border-t-[#E7CA83] text-center">
-          <div class="w-14 h-14 rounded-full bg-[#003399] border-2 border-[#E7CA83] flex items-center justify-center text-xl font-serif font-bold text-[#E7CA83] mx-auto mb-6 shadow-lg">
-            Γ
-          </div>
-          <h3 class="font-serif font-bold text-xl text-[#FCFFFE] mb-3">Scholarship</h3>
-          <p class="text-xs text-[#FCFFFE]/80 leading-relaxed font-sans">
-            A commitment to intellectual achievement, professional excellence, and continuous personal growth.
-          </p>
-        </div>
-
-        <div class="glass-liquid p-8 rounded-2xl border-t-2 border-t-[#CCA147] text-center">
-          <div class="w-14 h-14 rounded-full bg-[#003399] border-2 border-[#CCA147] flex items-center justify-center text-xl font-serif font-bold text-[#CCA147] mx-auto mb-6 shadow-lg">
-            Ρ
-          </div>
-          <h3 class="font-serif font-bold text-xl text-[#FCFFFE] mb-3">Service</h3>
-          <p class="text-xs text-[#FCFFFE]/80 leading-relaxed font-sans">
-            Empowering communities through impactful service, leadership initiatives, and dedication to progress.
-          </p>
-        </div>
+      <!-- CAROUSELS CONTAINER (INJECTED VIA JS) -->
+      <div id="carousels-container" class="space-y-16">
+        <!-- Injected via JS -->
       </div>
+
     </section>
 
-    <!-- ==========================================
-         ACT III — CRAFT
-         ========================================== -->
-    <section id="act-craft" class="act-section py-24 px-6 lg:px-16 max-w-7xl mx-auto border-b border-[#CCA147]/25">
+    <!-- ACT IV — CRAFT -->
+    <section id="act-craft" class="py-24 px-6 lg:px-16 max-w-7xl mx-auto border-t border-[#CCA147]/25">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
         <div>
-          <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#CCA147] block mb-3">Act III • Bespoke Artistry</span>
+          <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#CCA147] block mb-3">Act IV • Craft & Artistry</span>
           <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#FCFFFE] mb-6">
             THE CONFIDENCE COACH IN A BOTTLE™
           </h2>
@@ -438,38 +378,11 @@
             <img src="./collections/Greek Collection/Greek Collection/4E5F3DF8-8C84-4DA5-8D53-2758679195B6.JPG" alt="Greek Collection Masterpiece" class="w-full h-full object-contain rounded-xl">
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ==========================================
-         ACT IV — EXPRESSION (COLLECTIONS & 120 PIECES)
-         ========================================== -->
-    <section id="act-expression" class="act-section py-24 px-6 lg:px-16 max-w-7xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#CCA147] block mb-3">Act IV • Expression</span>
-        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-[#FCFFFE] tracking-wide uppercase">
-          AUTHENTIC GOOGLE DRIVE ARCHIVE
-        </h2>
-        <p class="text-xs text-[#FCFFFE]/70 mt-2 font-mono">120 Real Jewelry Pieces Across 9 Curated Collections</p>
-        <div class="w-28 h-[2px] bg-gradient-to-r from-transparent via-[#CCA147] to-transparent mx-auto mt-6"></div>
-      </div>
-
-      <!-- FILTER TABS -->
-      <div id="category-filter-bar" class="flex flex-wrap items-center justify-center gap-2 mb-14">
-        <!-- Injected via JS -->
-      </div>
-
-      <!-- PRODUCTS GRID -->
-      <div id="store-products-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Injected via JS -->
-      </div>
-    </section>
-
-    <!-- ==========================================
-         ACT V — LEGACY
-         ========================================== -->
-    <section id="act-legacy" class="act-section py-24 px-6 lg:px-16 bg-gradient-to-t from-[#00123A] via-[#001B55] to-[#003399]/40 border-t border-[#CCA147]/30 text-center relative overflow-hidden">
+    <!-- ACT V — LEGACY -->
+    <section id="act-legacy" class="py-24 px-6 lg:px-16 bg-gradient-to-t from-[#00123A] via-[#001B55] to-[#003399]/40 border-t border-[#CCA147]/30 text-center relative overflow-hidden">
       <div class="max-w-4xl mx-auto relative z-10">
         <span class="text-xs font-serif uppercase tracking-[0.3em] text-[#CCA147] block mb-4">Act V • Legacy</span>
         <h2 class="text-4xl sm:text-6xl font-serif font-black text-[#FCFFFE] leading-tight mb-6">
@@ -481,16 +394,15 @@
           Join the sisterhood of women who carry their legacy with pride, grace, and elevated style.
         </p>
 
-        <!-- LIQUID GLASS NEWSLETTER -->
         <div class="max-w-md mx-auto p-2.5 rounded-full glass-liquid flex items-center border border-[#CCA147]/60 shadow-2xl mb-12">
           <input type="email" placeholder="Enter your email for collection drops..." class="bg-transparent border-none outline-none px-4 py-2 text-xs text-[#FCFFFE] placeholder-gray-400 w-full">
-          <button onclick="alert('✨ Thank you! You are now subscribed to Greek Colors Colors drops.')" class="btn-gold px-6 py-2.5 rounded-full text-xs font-serif uppercase tracking-widest flex-shrink-0">
+          <button onclick="alert('✨ Thank you! You are now subscribed to Greek Colors Colors drops.')" class="interactive-el btn-gold px-6 py-2.5 rounded-full text-xs font-serif uppercase tracking-widest flex-shrink-0">
             Join List →
           </button>
         </div>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#act-expression" class="interactive-el btn-gold px-8 py-4 rounded-sm font-serif text-xs uppercase tracking-widest">
+          <a href="#act-carousels" class="interactive-el btn-gold px-8 py-4 rounded-sm font-serif text-xs uppercase tracking-widest">
             Shop Greek Colors Colors
           </a>
           <button onclick="switchTab('admin')" class="interactive-el px-8 py-4 rounded-sm border border-[#CCA147] bg-[#001B55] text-[#FCFFFE] font-serif text-xs uppercase tracking-widest hover:bg-[#003399] transition">
@@ -765,9 +677,8 @@
     </div>
   </div>
 
-  <!-- CANVAS LIQUID PARTICLE SYSTEM & INTERACTION ENGINE -->
+  <!-- CANVAS LIQUID PARTICLE SYSTEM -->
   <script>
-    // Canvas Background Renderer
     const canvas = document.getElementById('hero-canvas');
     const ctx = canvas.getContext('2d');
     let width = canvas.width = window.innerWidth;
@@ -803,7 +714,6 @@
     function renderCanvas() {
       ctx.clearRect(0, 0, width, height);
 
-      // Ambient Gold Glow under Mouse Cursor
       const gradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 350);
       gradient.addColorStop(0, 'rgba(0, 51, 153, 0.25)');
       gradient.addColorStop(0.5, 'rgba(204, 161, 71, 0.08)');
@@ -811,7 +721,6 @@
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, width, height);
 
-      // Render Floating Gold Micro-Particles
       particles.forEach(p => {
         p.x += p.vx;
         p.y += p.vy;
@@ -831,36 +740,25 @@
     }
     renderCanvas();
 
-    // Custom Aura Cursor Logic
     const cursor = document.getElementById('custom-cursor');
     const follower = document.getElementById('custom-cursor-follower');
 
     window.addEventListener('mousemove', (e) => {
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
-
       follower.style.left = e.clientX + 'px';
       follower.style.top = e.clientY + 'px';
     });
 
-    document.querySelectorAll('.interactive-el, a, button, input, select').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
-    });
-
-    // Act Intersection Observer for Narrative Reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
+    function bindCursorEvents() {
+      document.querySelectorAll('.interactive-el, a, button, input, select').forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
       });
-    }, { threshold: 0.15 });
-
-    document.querySelectorAll('.act-section').forEach(sec => observer.observe(sec));
+    }
   </script>
 
-  <!-- REAL COLLECTIONS DATA & CLIENT LOGIC -->
+  <!-- REAL COLLECTIONS CAROUSEL BUILDER LOGIC -->
   <script>
     const collections = [
   {
@@ -1048,8 +946,17 @@
   }
 ];
 
-    let activeCategory = 'all';
     let cart = [];
+
+    function scrollCarousel(colId, direction) {
+      const track = document.getElementById('carousel-track-' + colId);
+      if (!track) return;
+      const scrollAmount = track.clientWidth * 0.75;
+      track.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
 
     function switchTab(tab) {
       document.getElementById('view-storefront').classList.add('hidden');
@@ -1073,57 +980,73 @@
       renderUI();
     }
 
-    function filterCategory(catId) {
-      activeCategory = catId;
-      renderUI();
-    }
-
     function renderUI() {
-      // Category Filter Bar
-      const filterBar = document.getElementById('category-filter-bar');
-      let barHtml = `<button onclick="filterCategory('all')" class="interactive-el px-4 py-2 rounded-full text-xs font-serif uppercase tracking-wider ${activeCategory === 'all' ? 'bg-[#CCA147] text-[#001B55] font-bold shadow-lg' : 'bg-[#001B55] border border-[#CCA147]/40 text-[#FCFFFE]'}">All Collections (120)</button>`;
-      
+      // Build Dedicated Carousels
+      const carouselsContainer = document.getElementById('carousels-container');
+      let carouselsHtml = '';
+
       collections.forEach(col => {
-        barHtml += `<button onclick="filterCategory('${col.id}')" class="interactive-el px-4 py-2 rounded-full text-xs font-serif uppercase tracking-wider ${activeCategory === col.id ? 'bg-[#CCA147] text-[#001B55] font-bold shadow-lg' : 'bg-[#001B55] border border-[#CCA147]/40 text-[#FCFFFE]'}">${col.name} (${col.images.length})</button>`;
-      });
-      filterBar.innerHTML = barHtml;
+        carouselsHtml += `
+          <div class="glass-liquid rounded-2xl p-6 sm:p-8 border border-[#CCA147]/40 shadow-2xl relative">
+            
+            <!-- Carousel Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-[#CCA147]/25 pb-4">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-serif font-bold text-2xl text-[#FCFFFE] tracking-wide">${col.name}</h3>
+                  ${col.isFeatured ? '<span class="px-2.5 py-0.5 rounded bg-[#003399] border border-[#CCA147] text-[10px] font-serif text-[#E7CA83] font-bold">★ Prominent Line</span>' : ''}
+                </div>
+                <span class="text-xs text-[#E7CA83] font-mono mt-0.5 block">${col.images.length} Authentic Fine Jewelry Pieces</span>
+              </div>
 
-      // Storefront Grid
-      const grid = document.getElementById('store-products-grid');
-      let gridHtml = '';
+              <!-- Controls -->
+              <div class="flex items-center gap-3">
+                <button onclick="scrollCarousel('${col.id}', 'left')" class="interactive-el w-10 h-10 rounded-full border border-[#CCA147]/60 bg-[#00123A] text-[#CCA147] hover:bg-[#003399] flex items-center justify-center transition shadow-md">
+                  ←
+                </button>
+                <button onclick="scrollCarousel('${col.id}', 'right')" class="interactive-el w-10 h-10 rounded-full border border-[#CCA147]/60 bg-[#00123A] text-[#CCA147] hover:bg-[#003399] flex items-center justify-center transition shadow-md">
+                  →
+                </button>
+              </div>
+            </div>
 
-      const displayCols = activeCategory === 'all' ? collections : collections.filter(c => c.id === activeCategory);
+            <!-- Horizontal Carousel Track -->
+            <div id="carousel-track-${col.id}" class="carousel-track flex items-stretch gap-6 overflow-x-auto pb-4 pt-2">
+        `;
 
-      displayCols.forEach(col => {
         col.images.forEach((imgUrl, imgIdx) => {
           const price = 145 + ((imgIdx * 25) % 350);
           const pieceTitle = `${col.name} Piece #${imgIdx + 1}`;
-          
-          gridHtml += `
-            <div class="glass-liquid rounded-xl overflow-hidden group hover:border-[#CCA147] transition-all duration-500 flex flex-col justify-between shadow-xl">
+
+          carouselsHtml += `
+            <div class="w-72 sm:w-80 flex-shrink-0 bg-[#00123A] border border-[#CCA147]/30 rounded-xl overflow-hidden group hover:border-[#CCA147] transition-all duration-300 flex flex-col justify-between">
               <div>
-                <div class="relative h-72 bg-[#00123A] overflow-hidden flex items-center justify-center p-2">
-                  <img src="${imgUrl}" alt="${pieceTitle}" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700">
-                  ${col.isFeatured ? '<span class="absolute top-3 left-3 bg-[#003399] border border-[#CCA147] text-[#E7CA83] text-[10px] font-serif uppercase px-2.5 py-1 rounded font-bold shadow">★ Prominent Line</span>' : ''}
+                <div class="relative h-64 bg-[#001B55] overflow-hidden flex items-center justify-center p-3">
+                  <img src="${imgUrl}" alt="${pieceTitle}" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
-                <div class="p-5">
+                <div class="p-4">
                   <span class="text-[10px] font-serif uppercase tracking-widest text-[#E7CA83] font-semibold block mb-1">${col.name}</span>
-                  <h3 class="font-serif font-bold text-lg text-[#FCFFFE] mb-2">${pieceTitle}</h3>
-                  <p class="text-xs text-[#FCFFFE]/80 leading-relaxed mb-3 font-sans">Authentic handcrafted fine jewelry piece from Roslyn Kiser Miller's archive.</p>
+                  <h4 class="font-serif font-bold text-base text-[#FCFFFE] mb-1">${pieceTitle}</h4>
+                  <p class="text-[11px] text-[#FCFFFE]/75 leading-relaxed">Handcrafted sorority fine jewelry by Roslyn Kiser Miller.</p>
                 </div>
               </div>
-              <div class="p-5 pt-0 border-t border-[#CCA147]/20 flex items-center justify-between mt-auto">
-                <span class="text-lg font-serif font-bold text-[#CCA147]">$${price.toFixed(2)}</span>
-                <button onclick="addToCart('${pieceTitle.replace(/'/g, "\'")}', ${price})" class="interactive-el btn-gold px-4 py-2 rounded text-xs uppercase tracking-wider">
+              <div class="p-4 pt-0 border-t border-[#CCA147]/20 flex items-center justify-between mt-auto">
+                <span class="text-base font-serif font-bold text-[#CCA147]">$${price.toFixed(2)}</span>
+                <button onclick="addToCart('${pieceTitle.replace(/'/g, "\'")}', ${price})" class="interactive-el btn-gold px-3.5 py-1.5 rounded text-xs uppercase tracking-wider">
                   Add to Bag
                 </button>
               </div>
             </div>
           `;
         });
+
+        carouselsHtml += `
+            </div>
+          </div>
+        `;
       });
 
-      grid.innerHTML = gridHtml;
+      carouselsContainer.innerHTML = carouselsHtml;
 
       // Admin Inventory List
       const adminList = document.getElementById('admin-inventory-list');
@@ -1156,6 +1079,8 @@
       adminList.innerHTML = adminHtml;
       document.getElementById('admin-featured-count').innerText = '★ ' + featuredCount + ' Prominent Lines';
       document.getElementById('admin-total-count').innerText = totalPieces + ' Total Pieces';
+
+      bindCursorEvents();
     }
 
     function toggleProminence(colId) {
