@@ -2,6 +2,7 @@ const fs = require('fs');
 
 const b64Roslyn = fs.readFileSync('roslyn-b64.txt', 'utf8').trim();
 const photoDataUrl = `data:image/jpeg;base64,${b64Roslyn}`;
+const collectionsB64 = fs.readFileSync('collections-b64-data.json', 'utf8');
 
 const htmlCode = `<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -46,8 +47,10 @@ const htmlCode = `<!DOCTYPE html>
     }
   </script>
 
-  <!-- LOAD 120 REAL JEWELRY BASE64 ASSETS -->
-  <script src="collections-data.js"></script>
+  <!-- EMBED 120 REAL JEWELRY BASE64 ASSETS DIRECTLY -->
+  <script>
+    window.GREEK_COLLECTIONS = ${collectionsB64};
+  </script>
 
   <style>
     :root {
@@ -1433,4 +1436,4 @@ const htmlCode = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync('index.html', htmlCode);
-console.log('Successfully regenerated index.html with clean string escaping!');
+console.log('Successfully embedded 120 Base64 jewelry images directly inside index.html!');
