@@ -3,19 +3,6 @@ const fs = require('fs');
 const b64Roslyn = fs.readFileSync('roslyn-b64.txt', 'utf8').trim();
 const photoDataUrl = `data:image/jpeg;base64,${b64Roslyn}`;
 
-const rawCollections = JSON.parse(fs.readFileSync('collections-data.json', 'utf8'));
-
-const cleanCollections = rawCollections.map(col => {
-  return {
-    id: col.id,
-    name: col.name,
-    isFeatured: col.isFeatured,
-    images: col.images.map(imgObj => imgObj.url)
-  };
-});
-
-const collectionsJsonStr = JSON.stringify(cleanCollections);
-
 const htmlCode = `<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -58,6 +45,9 @@ const htmlCode = `<!DOCTYPE html>
       }
     }
   </script>
+
+  <!-- LOAD 120 REAL JEWELRY BASE64 ASSETS -->
+  <script src="collections-data.js"></script>
 
   <style>
     :root {
@@ -983,8 +973,6 @@ const htmlCode = `<!DOCTYPE html>
       { pct: 100, title: "ACCESS GRANTED — SHOWROOM ONLINE", sub: "Welcome to Greek Colors Colors. Prepare to enter.", node: "node-04" }
     ];
 
-    let currentStepIdx = 0;
-
     function updateLoaderProgress(pct) {
       loaderProgress = pct;
       document.getElementById('loader-progress-bar').style.width = pct + '%';
@@ -1074,8 +1062,6 @@ const htmlCode = `<!DOCTYPE html>
 
   <!-- EMBEDDED REAL GOOGLE DRIVE COLLECTIONS DATA & CLIENT CAROUSELS LOGIC -->
   <script>
-    const collections = ${collectionsJsonStr};
-
     let cart = [];
 
     function scrollCarousel(colId, direction) {
@@ -1111,7 +1097,7 @@ const htmlCode = `<!DOCTYPE html>
     }
 
     function renderUI() {
-      // Build Dedicated Carousels
+      const collections = window.GREEK_COLLECTIONS || [];
       const carouselsContainer = document.getElementById('carousels-container');
       if (!carouselsContainer) return;
       
@@ -1133,10 +1119,10 @@ const htmlCode = `<!DOCTYPE html>
 
               <!-- Controls -->
               <div class="flex items-center gap-3">
-                <button onclick="scrollCarousel('\${col.id}', 'left')" class="interactive-el px-3 py-1.5 rounded-full border border-[#CCA147]/60 bg-[#00123A] text-[#CCA147] hover:bg-[#003399] text-sm font-bold flex items-center gap-1 transition shadow-md">
+                <button onclick="scrollCarousel('\${col.id}', 'left')" class="interactive-el px-3.5 py-1.5 rounded-full border border-[#CCA147]/60 bg-[#00123A] text-[#CCA147] hover:bg-[#003399] text-sm font-bold flex items-center gap-1 transition shadow-md">
                   ← Prev
                 </button>
-                <button onclick="scrollCarousel('\${col.id}', 'right')" class="interactive-el px-3 py-1.5 rounded-full border border-[#CCA147]/60 bg-[#00123A] text-[#CCA147] hover:bg-[#003399] text-sm font-bold flex items-center gap-1 transition shadow-md">
+                <button onclick="scrollCarousel('\${col.id}', 'right')" class="interactive-el px-3.5 py-1.5 rounded-full border border-[#CCA147]/60 bg-[#00123A] text-[#CCA147] hover:bg-[#003399] text-sm font-bold flex items-center gap-1 transition shadow-md">
                   Next →
                 </button>
               </div>
@@ -1179,6 +1165,12 @@ const htmlCode = `<!DOCTYPE html>
       });
 
       carouselsContainer.innerHTML = carouselsHtml;
+
+      // Set Flagship Masterpiece Image
+      const flagshipImg = document.getElementById('flagship-master-img');
+      if (flagshipImg && collections[3] && collections[3].images && collections[3].images[0]) {
+        flagshipImg.src = collections[3].images[0];
+      }
 
       // Admin Inventory List
       const adminList = document.getElementById('admin-inventory-list');
@@ -1227,6 +1219,7 @@ const htmlCode = `<!DOCTYPE html>
     }
 
     function toggleProminence(colId) {
+      const collections = window.GREEK_COLLECTIONS || [];
       const target = collections.find(c => c.id === colId);
       if (target) {
         target.isFeatured = !target.isFeatured;
@@ -1236,18 +1229,22 @@ const htmlCode = `<!DOCTYPE html>
 
     function handleAddProduct(e) {
       e.preventDefault();
+      const collections = window.GREEK_COLLECTIONS || [];
       const title = document.getElementById('prod-title').value;
       const price = Number(document.getElementById('prod-price').value);
-      const img = document.getElementById('prod-[#]').value;
+      const img = document.getElementById('prod-img').value;
 
-      collections[0].images.unshift(img);
-      renderUI();
-      alert('✦ Success! Added ' + title + ' to active catalog.');
-      switchTab('storefront');
+      if (collections[0]) {
+        collections[0].images.unshift(img);
+        renderUI();
+        alert('✦ Success! Added ' + title + ' to active catalog.');
+        switchTab('storefront');
+      }
     }
 
     function handleZipUpload(e) {
       e.preventDefault();
+      const collections = window.GREEK_COLLECTIONS || [];
       const colName = document.getElementById('zip-col-name').value || 'Royal Archive';
       const featured = document.getElementById('zip-featured').checked;
 
@@ -1255,7 +1252,7 @@ const htmlCode = `<!DOCTYPE html>
         id: 'col-' + Date.now(),
         name: colName,
         isFeatured: featured,
-        images: [collections[0].images[0]]
+        images: [collections[0] ? collections[0].images[0] : 'assets/col-1-piece-1.jpg']
       });
 
       renderUI();
@@ -1344,4 +1341,4 @@ const htmlCode = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync('index.html', htmlCode);
-console.log('Successfully integrated Scene Zero — Cosmic Mission Brief Loader into index.html!');
+console.log('Successfully updated index.html with script tag linking collections-data.js!');
