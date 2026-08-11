@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greek Colors Colors — Bespoke Sorority Fine Jewelry World</title>
-  <meta name="description" content="Greek Colors Colors presents fine sorority jewelry handcrafted by Master Jeweler Roslyn Kiser Miller. Explore 120 authentic fine jewelry pieces celebrating identity, sisterhood, and legacy.">
+  <title>Greek Colors Colors — Cosmic Mission Brief & Orbital 3D Showroom</title>
+  <meta name="description" content="Greek Colors Colors Orbital Showroom Access. Mission Briefing and Systems Initialization sequence for bespoke sorority fine jewelry by Master Jeweler Roslyn Kiser Miller.">
   
   <!-- Premium Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -158,6 +158,28 @@
       border-color: #E7CA83;
     }
 
+    /* Scene Zero Mission Brief Loader Overlay */
+    #scene-zero-loader {
+      background-color: #00123A;
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .scan-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, #003399 30%, #CCA147 50%, #003399 70%, transparent 100%);
+      box-shadow: 0 0 15px #CCA147;
+      animation: scanPulse 3s infinite ease-in-out;
+    }
+
+    @keyframes scanPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(3); }
+    }
+
     .act-scene {
       opacity: 0;
       transform: translateY(30px);
@@ -194,8 +216,91 @@
   <!-- THREE.JS CONTINUOUS 3D SPATIAL WORLD CANVAS -->
   <canvas id="webgl-canvas" class="fixed inset-0 w-full h-full pointer-events-none z-0"></canvas>
 
+  <!-- ==========================================
+       SCENE ZERO — COSMIC MISSION BRIEF LOADER
+       ========================================== -->
+  <div id="scene-zero-loader" class="fixed inset-0 z-50 flex flex-col justify-between p-8 md:p-14 overflow-hidden pointer-events-auto">
+    
+    <!-- SCANNING LINE ACCENT -->
+    <div class="scan-line pointer-events-none"></div>
+
+    <!-- TOP TELEMETRY HEADER -->
+    <div class="flex items-center justify-between z-10 text-xs font-mono text-[#E7CA83]/80 tracking-widest uppercase border-b border-[#CCA147]/20 pb-4">
+      <div class="flex items-center gap-3">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#CCA147] animate-ping"></span>
+        <span>MISSION: GCC — ORBITAL COLLECTION 01</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-6">
+        <span>ENVIRONMENT: ROYAL SAPPHIRE / GOLD</span>
+        <span id="telemetry-status" class="text-[#FCFFFE] font-bold">STATUS: AUTHORIZING...</span>
+      </div>
+      <button onclick="enterShowroomNow()" class="interactive-el px-4 py-1.5 rounded border border-[#CCA147]/60 bg-[#001B55]/80 text-[#E7CA83] hover:bg-[#003399] transition font-serif uppercase tracking-widest text-[10px]">
+        SKIP BRIEFING ⚡
+      </button>
+    </div>
+
+    <!-- CENTER MISSION BRIEFING SEQUENTIAL TRANSMISSION -->
+    <div class="max-w-4xl mx-auto text-center z-10 my-auto">
+      
+      <span class="text-xs font-serif uppercase tracking-[0.4em] text-[#CCA147] block mb-4">
+        ORBITAL SHOWROOM ACCESS
+      </span>
+
+      <h1 class="text-4xl sm:text-7xl font-serif font-black tracking-widest text-[#FCFFFE] uppercase mb-8 leading-tight">
+        GREEK COLORS <br/>
+        <span class="gold-gradient-text">COLORS™</span>
+      </h1>
+
+      <!-- SEQUENTIAL SYSTEM TELEMETRY DISPLAY -->
+      <div class="h-20 flex flex-col items-center justify-center space-y-2">
+        <div id="loader-telemetry-text" class="text-sm sm:text-base font-mono uppercase tracking-[0.25em] text-[#E7CA83]">
+          INITIALIZING ENVIRONMENT...
+        </div>
+        <div id="loader-telemetry-sub" class="text-xs font-serif italic text-[#FCFFFE]/70">
+          Royal-blue architectural scanning grid establishing...
+        </div>
+      </div>
+
+      <!-- PROGRESS PERCENTAGE BAR & TELEMETRY -->
+      <div class="max-w-md mx-auto mt-8 space-y-3">
+        <div class="w-full h-1.5 bg-[#001B55] rounded-full overflow-hidden border border-[#CCA147]/40">
+          <div id="loader-progress-bar" class="h-full bg-gradient-to-r from-[#003399] via-[#CCA147] to-[#E7CA83] w-0 transition-all duration-300"></div>
+        </div>
+        <div class="flex items-center justify-between text-[11px] font-mono text-[#E7CA83]/90 tracking-widest">
+          <span>SYSTEMS SYNC</span>
+          <span id="loader-percent-num">0%</span>
+        </div>
+      </div>
+
+      <!-- ENTER BUTTON (APPEARS AT ACCESS GRANTED) -->
+      <div id="enter-btn-wrap" class="mt-10 opacity-0 transition-all duration-700 pointer-events-none transform translate-y-4">
+        <button onclick="enterShowroomNow()" class="interactive-el btn-gold px-12 py-5 rounded font-serif text-xs uppercase tracking-[0.3em] shadow-[0_0_50px_rgba(204,161,71,0.6)]">
+          ENTER ORBITAL SHOWROOM →
+        </button>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM ARCHITECTURAL BLUEPRINT NODES -->
+    <div class="z-10 grid grid-cols-2 md:grid-cols-4 gap-4 text-center border-t border-[#CCA147]/20 pt-4 text-[10px] font-mono text-[#FCFFFE]/70 tracking-widest uppercase">
+      <div id="node-01" class="p-2 rounded bg-[#001B55]/60 border border-[#CCA147]/20">
+        [01] ARRIVAL CHAMBER
+      </div>
+      <div id="node-02" class="p-2 rounded bg-[#001B55]/60 border border-[#CCA147]/20">
+        [02] CENTRAL VAULT
+      </div>
+      <div id="node-03" class="p-2 rounded bg-[#001B55]/60 border border-[#CCA147]/20">
+        [03] ATELIER STUDIO
+      </div>
+      <div id="node-04" class="p-2 rounded bg-[#001B55]/60 border border-[#CCA147]/20">
+        [04] LEGACY GALLERY
+      </div>
+    </div>
+
+  </div>
+
   <!-- ANNOUNCEMENT BAR -->
-  <div class="relative z-50 bg-[#001B55] border-b border-[#CCA147]/40 py-2 px-4 text-center text-xs font-serif tracking-[0.2em] text-[#E7CA83] flex items-center justify-between">
+  <div class="relative z-40 bg-[#001B55] border-b border-[#CCA147]/40 py-2 px-4 text-center text-xs font-serif tracking-[0.2em] text-[#E7CA83] flex items-center justify-between">
     <div class="hidden sm:flex items-center gap-2">
       <span class="inline-block w-2 h-2 rounded-full bg-[#CCA147] animate-pulse"></span>
       SIGMA GAMMA RHO SORORITY, INC. OFFICIAL FINE JEWELRY COLLECTION
@@ -768,14 +873,14 @@
     });
 
     // Lights
-    const ambientLight = new THREE.AmbientLight(0x001B55, 1.5);
+    const ambientLight = new THREE.AmbientLight(0x001B55, 0.5); // Dim initially for loader
     scene.add(ambientLight);
 
-    const royalPointLight = new THREE.PointLight(0x003399, 4, 30);
+    const royalPointLight = new THREE.PointLight(0x003399, 1, 30);
     royalPointLight.position.set(0, 4, 2);
     scene.add(royalPointLight);
 
-    const goldSpotLight = new THREE.SpotLight(0xCCA147, 5, 40, Math.PI / 4, 0.5);
+    const goldSpotLight = new THREE.SpotLight(0xCCA147, 1, 40, Math.PI / 4, 0.5);
     goldSpotLight.position.set(5, 8, 5);
     scene.add(goldSpotLight);
 
@@ -804,7 +909,7 @@
       size: 0.08,
       color: 0xE7CA83,
       transparent: true,
-      opacity: 0.8
+      opacity: 0.2 // Faint initially during loader
     });
     const particlesMesh = new THREE.Points(particlesGeo, particlesMat);
     scene.add(particlesMesh);
@@ -845,6 +950,79 @@
       renderer.render(scene, camera);
     }
     animate();
+
+    // ==========================================
+    // SCENE ZERO LOADER STATE MACHINE & TIMELINE
+    // ==========================================
+    let loaderProgress = 0;
+    const loaderSteps = [
+      { pct: 15, title: "INITIALIZING ENVIRONMENT...", sub: "Royal-blue architectural scanning grid establishing...", node: "node-01" },
+      { pct: 30, title: "CALIBRATING NAVIGATION...", sub: "Spatial blueprint resolving 3D showroom coordinates...", node: "node-01" },
+      { pct: 45, title: "ESTABLISHING ORBITAL LINK...", sub: "Cosmic environment particles and lighting activating...", node: "node-02" },
+      { pct: 60, title: "SYNCING COLLECTION ARCHIVE...", sub: "120 fine jewelry pieces verified in archive...", node: "node-02" },
+      { pct: 75, title: "LOADING MATERIAL SYSTEMS...", sub: "Solid 18k gold & royal blue sapphire PBR shaders ready...", node: "node-03" },
+      { pct: 90, title: "ACTIVATING SHOWROOM LIGHTING...", sub: "Orbital vault illumination powered on...", node: "node-04" },
+      { pct: 100, title: "ACCESS GRANTED — SHOWROOM ONLINE", sub: "Welcome to Greek Colors Colors. Prepare to enter.", node: "node-04" }
+    ];
+
+    let currentStepIdx = 0;
+
+    function updateLoaderProgress(pct) {
+      loaderProgress = pct;
+      document.getElementById('loader-progress-bar').style.width = pct + '%';
+      document.getElementById('loader-percent-num').innerText = Math.round(pct) + '%';
+
+      // 3D Environment Progression based on loading %
+      ambientLight.intensity = 0.5 + (pct / 100) * 1.5;
+      royalPointLight.intensity = 1 + (pct / 100) * 3;
+      goldSpotLight.intensity = 1 + (pct / 100) * 4;
+      particlesMat.opacity = 0.2 + (pct / 100) * 0.6;
+
+      const step = loaderSteps.find(s => pct <= s.pct);
+      if (step) {
+        document.getElementById('loader-telemetry-text').innerText = step.title;
+        document.getElementById('loader-telemetry-sub').innerText = step.sub;
+        
+        if (step.node) {
+          document.querySelectorAll('[id^="node-"]').forEach(n => n.classList.remove('border-[#CCA147]', 'text-[#CCA147]'));
+          const activeNode = document.getElementById(step.node);
+          if (activeNode) {
+            activeNode.classList.add('border-[#CCA147]', 'text-[#CCA147]');
+          }
+        }
+      }
+
+      if (pct >= 100) {
+        document.getElementById('telemetry-status').innerText = 'STATUS: AUTHORIZED';
+        document.getElementById('telemetry-status').className = 'text-emerald-400 font-bold';
+        
+        const enterBtnWrap = document.getElementById('enter-btn-wrap');
+        enterBtnWrap.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        enterBtnWrap.classList.add('opacity-100', 'translate-y-0');
+      }
+    }
+
+    // Auto Progress Loader Simulation
+    let loaderTimer = setInterval(() => {
+      if (loaderProgress < 100) {
+        updateLoaderProgress(loaderProgress + 15);
+      } else {
+        clearInterval(loaderTimer);
+      }
+    }, 450);
+
+    function enterShowroomNow() {
+      clearInterval(loaderTimer);
+      updateLoaderProgress(100);
+
+      const loaderEl = document.getElementById('scene-zero-loader');
+      loaderEl.style.opacity = '0';
+      loaderEl.style.transform = 'scale(1.05)';
+      
+      setTimeout(() => {
+        loaderEl.style.display = 'none';
+      }, 1200);
+    }
 
     // Custom Aura Cursor Logic
     const cursor = document.getElementById('custom-cursor');
@@ -1042,7 +1220,7 @@
       e.preventDefault();
       const title = document.getElementById('prod-title').value;
       const price = Number(document.getElementById('prod-price').value);
-      const img = document.getElementById('prod-img').value;
+      const img = document.getElementById('prod-[#]').value;
 
       collections[0].images.unshift(img);
       renderUI();
