@@ -1353,7 +1353,7 @@ const htmlCode = `<!DOCTYPE html>
     }
 
     function runAIGenerator() {
-      alert('✨ GPT-4o Multimodal Vision Analysis Complete!\nGenerated copy & pricing aligned with Confidence Coach in a Bottle™ brand voice.');
+      alert('✨ GPT-4o Multimodal Vision Analysis Complete!\\nGenerated copy & pricing aligned with Confidence Coach in a Bottle™ brand voice.');
     }
 
     function toggleBioModal() {
@@ -1433,4 +1433,4 @@ const htmlCode = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync('index.html', htmlCode);
-console.log('Successfully generated Cosmic 3D Flagship Luxury Showroom index.html!');
+console.log('Successfully regenerated index.html with clean string escaping!');
